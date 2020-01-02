@@ -42,8 +42,7 @@
 
   (define (replace-tilde str)
     (let* ([in (open-input-string str)]
-	   [str-list (string->list str)]
-	   [str-length (length str-list)])
+	   [str-list (string->list str)])
       (if (not (member #\~ str-list))
   	  str  ;; return string unchanged b/c no tilde
           (let loop ([c (read-char in)]
@@ -55,3 +54,5 @@
                   [else
                    (loop (read-char in) (string-append result (string c)))])))))  
   )
+
+  
