@@ -35,11 +35,11 @@
              (loop (cdr ls))]))
     (loop (data-lookup proc source)))
 
-  (define (display-launch proc-data-selected launch?)
-    (when proc-data-selected
-      (display (replace-tilde (string-append (caadr proc-data-selected) "\n")))
+  (define (display-launch data-selected launch?)
+    (when data-selected
+      (display (replace-tilde (string-append (caadr data-selected) "\n")))
       (when launch?
-        (system (string-append "open " (cadadr proc-data-selected))))))
+        (system (string-append "open " (cadadr data-selected))))))
 
   (define (data-lookup proc source)
     (cond [(or (string=? source "CSUG") (string=? source "TSPL"))
