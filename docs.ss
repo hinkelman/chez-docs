@@ -1,8 +1,25 @@
 (library (chez-docs docs)
-  (export doc)
+  (export doc
+          launch-csug-summary)
 
-  (import (chezscheme)
-          (chez-docs data))
+  (import (chezscheme))
+
+  ;; load data --------------------------------------------------
+
+  (define data-paths
+    (map (lambda (x) (string-append x "/chez-docs/data.scm"))
+         (map car (library-directories))))
+
+  (define data
+    (let ([tmp '()])
+      (for-each
+       (lambda (path)
+         (when (file-exists? path)
+           (set! tmp (with-input-from-file path read))))
+       data-paths)
+      tmp))
+
+  ;; launch documentation -----------------------------------------
 
   (define doc
     (case-lambda
@@ -36,9 +53,9 @@
           [else
            (assertion-violation "(doc proc source)" "source not one of CSUG, TSPL, both")]))
 
-  ;; proc-data imported with (chez-docs data)
+  ;; data is imported above
   (define (dl-helper proc source)
-    (assoc proc (cadr (assoc source proc-data)))) 
+    (assoc proc (cadr (assoc source data)))) 
 
   (define (replace-tilde str)
     (let* ([in (open-input-string str)]
@@ -52,7 +69,45 @@
                   [(char=? c #\~)
                    (loop (read-char in) (string-append result "\n"))]
                   [else
-                   (loop (read-char in) (string-append result (string c)))])))))  
+                   (loop (read-char in) (string-append result (string c)))])))))
+
+  (define (launch-csug-summary)
+    (system "open https://cisco.github.io/ChezScheme/csug9.5/summary.html#./summary:h0"))
+  
+  ;; (define/memoized (edit-distance a b)
+  ;;   (match `(,a ,b)
+  ;;     (`(,a ())
+  ;;      (length a))
+  ;;     (`(() ,b)
+  ;;      (length b))
+  ;;     (`((,a0 . ,a*) (,b0 . ,b*))
+  ;;      (min (+ (edit-distance a* b) 1)
+  ;;           (+ (edit-distance a b*) 1)
+  ;;           (+ (edit-distance a* b*)
+  ;;              (if (equal? a0 b0) 0 2))))))
+
+  ;; ;; where the `define/memoized' special form can be defined in the following way:
+
+  ;; (define (memoized proc)
+  ;;   (let ((cache (make-hash-table)))
+  ;;     (lambda args
+  ;;       (match (hash-get-handle cache args)
+  ;;         (`(,key . ,memoized-result)
+  ;;          (apply values memoized-result))
+  ;;         (_
+  ;;          (call-with-values (lambda () (apply proc args))
+  ;;            (lambda result
+  ;;              (hash-set! cache args result)
+  ;;              (apply values result))))))))
+
+  ;;   ;; (define-syntax-rule (define/memoized (name . args) . body)
+  ;;   ;; (define name (memoized (lambda args . body))))
+
+  ;; (define-syntax define/memoized
+  ;;   (syntax-rules ()
+  ;;     [(_ (name . args) . body)
+  ;;      (memoized (lambda args . body))]))
+          
   )
 
-  
+

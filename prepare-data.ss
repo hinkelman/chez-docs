@@ -9,7 +9,6 @@
 (define data (list (list "CSUG" csug-alist)
                    (list "TSPL" tspl-alist)))
 
-(with-output-to-file "data.ss" (lambda () (write data)))
+(with-output-to-file "data.scm" (lambda () (write data)))
 
-;; after writing file; manually add library code
 
