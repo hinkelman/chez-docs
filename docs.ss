@@ -73,41 +73,6 @@
 
   (define (launch-csug-summary)
     (system "open https://cisco.github.io/ChezScheme/csug9.5/summary.html#./summary:h0"))
-  
-  ;; (define/memoized (edit-distance a b)
-  ;;   (match `(,a ,b)
-  ;;     (`(,a ())
-  ;;      (length a))
-  ;;     (`(() ,b)
-  ;;      (length b))
-  ;;     (`((,a0 . ,a*) (,b0 . ,b*))
-  ;;      (min (+ (edit-distance a* b) 1)
-  ;;           (+ (edit-distance a b*) 1)
-  ;;           (+ (edit-distance a* b*)
-  ;;              (if (equal? a0 b0) 0 2))))))
-
-  ;; ;; where the `define/memoized' special form can be defined in the following way:
-
-  ;; (define (memoized proc)
-  ;;   (let ((cache (make-hash-table)))
-  ;;     (lambda args
-  ;;       (match (hash-get-handle cache args)
-  ;;         (`(,key . ,memoized-result)
-  ;;          (apply values memoized-result))
-  ;;         (_
-  ;;          (call-with-values (lambda () (apply proc args))
-  ;;            (lambda result
-  ;;              (hash-set! cache args result)
-  ;;              (apply values result))))))))
-
-  ;;   ;; (define-syntax-rule (define/memoized (name . args) . body)
-  ;;   ;; (define name (memoized (lambda args . body))))
-
-  ;; (define-syntax define/memoized
-  ;;   (syntax-rules ()
-  ;;     [(_ (name . args) . body)
-  ;;      (memoized (lambda args . body))]))
-          
+            
   )
-
 

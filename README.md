@@ -3,7 +3,7 @@
 Access Chez Scheme documentation from the REPL. 
 
 Related blog post:  
-[Library to access Chez Scheme documentation from the REPL](https://www.travishinkelman.com/post/access-chez-scheme-documentation-from-repl/)  
+[Access Chez Scheme documentation from the REPL](https://www.travishinkelman.com/post/access-chez-scheme-documentation-from-repl/)  
 
 ### Installation
 
