@@ -30,10 +30,11 @@
            (cons (car ls) (remove-duplicates (cdr ls)))]))
 
   (define proc-list
-    (remove-duplicates
-     (append
-      (map car (cadar data))     ;; csug procs
-      (map car (cadadr data))))) ;; tspl procs
+    (sort string<?
+          (remove-duplicates
+           (append
+            (map car (cadar data))     ;; csug procs
+            (map car (cadadr data)))))) ;; tspl procs
 
   ;; launch documentation -----------------------------------------
 
