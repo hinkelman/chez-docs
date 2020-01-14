@@ -33,16 +33,44 @@ The main procedure is `doc` with the form `(doc proc source launch?)`. The `sour
 
 ```
 > (find-proc "append")
-("append!" "append" "string-append")
+("append" "append!" "string-append")
 > (find-proc "append" 5 #t)
-("append" "append!" "expand" "putenv" "and")
+("append" "append!" "and" "apply" "cond")
 > (find-proc "hashtable" 5)
 ("eq-hashtable-cell" "eq-hashtable-contains?" "eq-hashtable-delete!" "eq-hashtable-ephemeron?" "eq-hashtable-ref")
 > (find-proc "hashtable" 5 #t)
 ("hashtable?" "hash-table?" "mutable" "eq-hashtable?" "hashtable-ref")
 ```
 
-When `fuzzy?` is false, the search string is compared to all possible strings and strings that match the search string are returned. When `fuzzy?` is true, the Levenshtein distance is calculated for every available string and the results are sorted in ascending order by distance. Thus, an exact match shows up at the beginning of the list, but it is also more likely to turn up spurious results.
+When `fuzzy?` is false, the search string is compared to all possible strings and strings that match the search string are returned. When `fuzzy?` is true, the Levenshtein distance is calculated for every available string and the results are sorted in ascending order by distance. Thus, an exact match shows up at the beginning of the list.
+
+The `^` indicates that only search strings found at the start of the procedure should be returned.
+
+```
+> (find-proc "map")
+("andmap" "hash-table-map" "map" "ormap" "vector-map")
+> (find-proc "^map")
+("map")
+
+> (find-proc "file" 3)
+("&i/o-file-already-exists" "&i/o-file-does-not-exist" "&i/o-file-is-read-only")
+> (find-proc "^file" 3)
+("file-access-time" "file-buffer-size" "file-change-time")
+
+> (find-proc "let" 5)
+("delete-directory" "delete-file" "let*" "let*-values" "let-syntax")
+> (find-proc "^let")
+("let*" "let*-values" "let-syntax" "let-values" "letrec" "letrec*" "letrec-syntax")
+```
+
+Under fuzzy matching, the `^` is included as part of the Levenshtein distance calculation and, thus, should not be included in search strings when using fuzzy matching.
+
+```
+> (find-proc "map" 5 #t)
+("map" "max" "*" "+" "-")
+> (find-proc "^map" 5 #t)
+("map" "max" "car" "exp" "memp")
+```
 
 `chez-docs` also includes a procedure, `launch-csug-summary`, for opening the Chez Scheme User's Guide [Summary of Forms](https://cisco.github.io/ChezScheme/csug9.5/summary.html) page in your default browser. The procedure takes no arguments. 
 

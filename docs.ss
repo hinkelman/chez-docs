@@ -10,7 +10,7 @@
   (define data-paths
     (map (lambda (x) (string-append x "/chez-docs/data.scm"))
          (map car (library-directories))))
-
+  
   (define data
     (let ([tmp '()])
       (for-each
@@ -125,12 +125,14 @@
             [(char=? (car s-list) (car t-sub))
              (loop (cdr s-list) (cdr t-sub))]
             [else #f]))
-    (let ([s (string->list s)]
-          [t (string->list t)])
-      (if (not (for-all (lambda (x) (member x t)) s))
-          #f
-          (loop s (member (car s) t)))))
-  
+    (let* ([s-list-temp (string->list s)]
+           [starts-with? (char=? (car s-list-temp) #\^)]
+           [s-list (if starts-with? (cdr s-list-temp) s-list-temp)]
+           [t-list (string->list t)])
+      (cond [(and starts-with? (not (char=? (car s-list) (car t-list)))) #f]
+            [(not (for-all (lambda (x) (member x t-list)) s-list)) #f]  
+            [else (loop s-list (member (car s-list) t-list))])))
+
   ;; https://blogs.mathworks.com/cleve/2017/08/14/levenshtein-edit-distance-between-strings/
   (define (lev s t)
     (let* ([s (list->vector (string->list s))]
@@ -154,4 +156,5 @@
           (set! y tmp)))
       (vector-ref x n)))
   )
+
 
