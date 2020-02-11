@@ -56,9 +56,7 @@
     (when data-selected
       (display (replace-tilde (string-append (caadr data-selected) "\n")))
       (when launch?
-        (system (string-append
-                 (open-string "(doc proc source launch?)")
-                 (cadadr data-selected))))))
+        (system (string-append open-string (cadadr data-selected))))))
 
   (define (data-lookup proc source)
     (cond [(or (string=? source "CSUG") (string=? source "TSPL"))
@@ -91,17 +89,13 @@
                    (loop (read-char in) (string-append result (string c)))])))))
 
   (define (launch-csug-summary)
-    (system (string-append
-             (open-string "(launch-csug-summary)")
-             "https://cisco.github.io/ChezScheme/csug9.5/summary.html#./summary:h0")))
+    (system (string-append open-string "https://cisco.github.io/ChezScheme/csug9.5/summary.html#./summary:h0")))
 
-  (define (open-string proc-string)
-    (let ([mt (machine-type)])
-      (if (member mt '(i3nt ti3nt a6nt ta6nt))
-          (assertion-violation proc-string "Your machine type is not currently supported.")
-          (if (member mt '(i3osx ti3osx a6osx ta6osx))
-              "open "
-              "xdg-open "))))
+  (define open-string
+    (case (machine-type)
+      [(i3nt ti3nt a6nt ta6nt) "start "]     ; windows
+      [(i3osx ti3osx a6osx ta6osx) "open "]  ; mac
+      [else "xdg-open "]))                   ; linux
 
   ;; procedure search -----------------------------------------
 
