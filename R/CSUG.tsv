@@ -1,8 +1,8 @@
 Key	Form	URL
-#%variable	#%variable	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s101
-#2%variable	#2%variable	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s101
-#3%variable	#3%variable	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s101
-$primitive	($primitive variable)~($primitive 2 variable)~($primitive 3 variable)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s101
+#%variable	#%variable	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s109
+#2%variable	#2%variable	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s109
+#3%variable	#3%variable	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s109
+$primitive	($primitive variable)~($primitive 2 variable)~($primitive 3 variable)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s109
 $system	$system	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s35
 &continuation	&continuation	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s6
 &format	&format	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s4
@@ -15,11 +15,11 @@ $system	$system	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:
 =	(= num1 num2 num3 ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s67
 >	(> real1 real2 real3 ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s67
 >=	(>= real1 real2 real3 ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s67
-abort	(abort)~(abort obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s162
-abort-handler	abort-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s163
+abort	(abort)~(abort obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s185
+abort-handler	abort-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s186
 acosh	(acosh num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s77
-add-duration	(add-duration time timed)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s189
-add-duration!	(add-duration! time timed)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s189
+add-duration	(add-duration time timed)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s212
+add-duration!	(add-duration! time timed)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s212
 add-prefix	add-prefix	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s22
 add1	(add1 num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s68
 andmap	(andmap procedure list1 list2 ...)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s8
@@ -39,25 +39,25 @@ atanh	(atanh num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./num
 atom?	(atom? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s2
 base-exception-handler	base-exception-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s12
 bignum?	(bignum? obj)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s11
-binary-port-input-buffer	(binary-port-input-buffer binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-binary-port-input-count	(binary-port-input-count binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
-binary-port-input-index	(binary-port-input-index binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-binary-port-input-size	(binary-port-input-size binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-binary-port-output-buffer	(binary-port-output-buffer output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-binary-port-output-count	(binary-port-output-count binary-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
-binary-port-output-index	(binary-port-output-index output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-binary-port-output-size	(binary-port-output-size output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-block-read	(block-read textual-input-port string)~(block-read textual-input-port string count)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s63
-block-write	(block-write textual-output-port string)~(block-write textual-output-port string count)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s78
-box	(box obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s80
-box-cas!	(box-cas! box old-obj new-obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s83
-box-immutable	(box-immutable obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s85
-box?	(box? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s79
+binary-port-input-buffer	(binary-port-input-buffer binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+binary-port-input-count	(binary-port-input-count binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
+binary-port-input-index	(binary-port-input-index binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+binary-port-input-size	(binary-port-input-size binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+binary-port-output-buffer	(binary-port-output-buffer output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+binary-port-output-count	(binary-port-output-count binary-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s22
+binary-port-output-index	(binary-port-output-index output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+binary-port-output-size	(binary-port-output-size output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+block-read	(block-read textual-input-port string)~(block-read textual-input-port string count)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s69
+block-write	(block-write textual-output-port string)~(block-write textual-output-port string count)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s86
+box	(box obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s82
+box-cas!	(box-cas! box old-obj new-obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s85
+box-immutable	(box-immutable obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s87
+box?	(box? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s81
 break	(break who msg irritant ...)~(break who)~(break)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s17
 break-handler	break-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s19
 bwp-object?	(bwp-object? obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s28
-bytes-allocated	(bytes-allocated)~(bytes-allocated g)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s203
-bytes-deallocated	(bytes-deallocated)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s205
+bytes-allocated	(bytes-allocated)~(bytes-allocated g)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s226
+bytes-deallocated	(bytes-deallocated)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s228
 bytevector	(bytevector fill ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s59
 bytevector->immutable-bytevector	(bytevector->immutable-bytevector bytevector)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s66
 bytevector->s8-list	(bytevector->s8-list bytevector)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s60
@@ -79,13 +79,13 @@ bytevector-u48-ref	(bytevector-u48-ref bytevector n eness)	https://cisco.gith
 bytevector-u48-set!	(bytevector-u48-set! bytevector n u48 eness)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s64
 bytevector-u56-ref	(bytevector-u56-ref bytevector n eness)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s63
 bytevector-u56-set!	(bytevector-u56-set! bytevector n u56 eness)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s64
-bytevector-uncompress	(bytevector-uncompress bytevector)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s70
-call-with-input-file	(call-with-input-file path procedure)~(call-with-input-file path procedure options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s52
-call-with-output-file	(call-with-output-file path procedure)~(call-with-output-file path procedure options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s70
+bytevector-uncompress	(bytevector-uncompress bytevector)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s72
+call-with-input-file	(call-with-input-file path procedure)~(call-with-input-file path procedure options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s58
+call-with-output-file	(call-with-output-file path procedure)~(call-with-output-file path procedure options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s78
 call/1cc	(call/1cc procedure)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s9
 case	(case expr0 clause1 clause2 ...)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s1
-case-sensitive	case-sensitive	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s101
-cd	cd	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s127
+case-sensitive	case-sensitive	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s109
+cd	cd	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s136
 cfl*	(cfl* cflonum ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s38
 cfl+	(cfl+ cflonum ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s38
 cfl-	(cfl- cflonum1 cflonum2 ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s38
@@ -102,16 +102,16 @@ char-ci<?	(char-ci<? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug
 char-ci=?	(char-ci=? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s15
 char-ci>=?	(char-ci>=? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s15
 char-ci>?	(char-ci>? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s15
-char-name	(char-name obj)~(char-name name char)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s99
-char-ready?	(char-ready?)~(char-ready? textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s62
+char-name	(char-name obj)~(char-name name char)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s107
+char-ready?	(char-ready?)~(char-ready? textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s68
 char<=?	(char<=? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s15
 char<?	(char<? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s15
 char=?	(char=? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s15
 char>=?	(char>=? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s15
 char>?	(char>? char1 char2 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s15
-chmod	(chmod path mode)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s138
-clear-input-port	(clear-input-port)~(clear-input-port input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s34
-clear-output-port	(clear-output-port)~(clear-output-port output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s35
+chmod	(chmod path mode)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s147
+clear-input-port	(clear-input-port)~(clear-input-port input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s36
+clear-output-port	(clear-output-port)~(clear-output-port output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s37
 collect	(collect)~(collect g)~(collect g tg)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s9
 collect-generation-radix	collect-generation-radix	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s15
 collect-maximum-generation	collect-maximum-generation	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s16
@@ -119,111 +119,114 @@ collect-notify	collect-notify	https://cisco.github.io/ChezScheme/csug9.5/smgmt.h
 collect-rendezvous	(collect-rendezvous)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s10
 collect-request-handler	collect-request-handler	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s17
 collect-trip-bytes	collect-trip-bytes	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s12
-collections	(collections)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s209
-command-line	command-line	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s173
-command-line-arguments	command-line-arguments	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s175
-commonization-level	commonization-level	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s115
+collections	(collections)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s232
+command-line	command-line	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s196
+command-line-arguments	command-line-arguments	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s198
+commonization-level	commonization-level	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s125
 compile	(compile obj)~(compile obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s43
-compile-compressed	compile-compressed	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s111
-compile-file	(compile-file input-filename)~(compile-file input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s55
-compile-file-message	compile-file-message	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s112
+compile-compressed	compile-compressed	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s119
+compile-file	(compile-file input-filename)~(compile-file input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s63
+compile-file-message	compile-file-message	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s122
 compile-imported-libraries	compile-imported-libraries	https://cisco.github.io/ChezScheme/csug9.5/libraries.html#./libraries:s24
-compile-interpret-simple	compile-interpret-simple	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s104
-compile-library	(compile-library input-filename)~(compile-library input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s61
-compile-library-handler	compile-library-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s65
-compile-port	(compile-port input-port output-port)~(compile-port input-port output-port sfd)~(compile-port input-port output-port sfd wpo-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s72
-compile-profile	compile-profile	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s132
-compile-program	(compile-program input-filename)~(compile-program input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s62
-compile-program-handler	compile-program-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s67
-compile-script	(compile-script input-filename)~(compile-script input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s58
+compile-interpret-simple	compile-interpret-simple	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s112
+compile-library	(compile-library input-filename)~(compile-library input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s69
+compile-library-handler	compile-library-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s73
+compile-port	(compile-port input-port output-port)~(compile-port input-port output-port sfd)~(compile-port input-port output-port sfd wpo-port)~(compile-port input-port output-port sfd wpo-port covop)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s80
+compile-profile	compile-profile	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s143
+compile-program	(compile-program input-filename)~(compile-program input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s70
+compile-program-handler	compile-program-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s75
+compile-script	(compile-script input-filename)~(compile-script input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s66
 compile-time-value-value	(compile-time-value-value ctv)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s17
 compile-time-value?	(compile-time-value? obj)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s16
-compile-to-file	(compile-to-file obj-list output-file)~(compile-to-file obj-list output-file sfd)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s74
-compile-to-port	(compile-to-port obj-list output-port)~(compile-to-port obj-list output-port sfd)~(compile-to-port obj-list output-port sfd wpo-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s73
-compile-whole-library	(compile-whole-library input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s71
-compile-whole-program	(compile-whole-program input-filename output-filename)~(compile-whole-program input-filename output-filename libs-visible?)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s69
+compile-to-file	(compile-to-file obj-list output-file)~(compile-to-file obj-list output-file sfd)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s82
+compile-to-port	(compile-to-port obj-list output-port)~(compile-to-port obj-list output-port sfd)~(compile-to-port obj-list output-port sfd wpo-port)~(compile-to-port obj-list output-port sfd wpo-port covop)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s81
+compile-whole-library	(compile-whole-library input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s79
+compile-whole-program	(compile-whole-program input-filename output-filename)~(compile-whole-program input-filename output-filename libs-visible?)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s77
+compress-format	compress-format	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s42
+compress-level	compress-level	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s43
 compute-composition	(compute-composition object)~(compute-composition object generation)	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s31
 compute-size	(compute-size object)~(compute-size object generation)	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s30
-condition-broadcast	(condition-broadcast cond)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s15
+condition-broadcast	(condition-broadcast cond)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s16
 condition-continuation	(condition-continuation condition)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s6
-condition-signal	(condition-signal cond)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s14
-condition-wait	(condition-wait cond mutex)~(condition-wait cond mutex timeout)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s13
+condition-name	(condition-name condition)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s17
+condition-signal	(condition-signal cond)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s15
+condition-wait	(condition-wait cond mutex)~(condition-wait cond mutex timeout)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s14
 conjugate	(conjugate num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s74
-console-error-port	console-error-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s67
-console-input-port	console-input-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s49
-console-output-port	console-output-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s65
-constructor	constructor	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s174
+console-error-port	console-error-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s73
+console-input-port	console-input-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s55
+console-output-port	console-output-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s71
+constructor	constructor	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s176
 continuation-condition?	(continuation-condition? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s6
 copy-environment	(copy-environment env)~(copy-environment env mutable?)~(copy-environment env mutable? syms)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s34
-copy-time	(copy-time time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s188
+copy-time	(copy-time time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s211
 cosh	(cosh num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s76
-cost-center-allocation-count	(cost-center-allocation-count cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s225
-cost-center-instruction-count	(cost-center-instruction-count cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s224
-cost-center-time	(cost-center-time cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s226
-cost-center?	(cost-center? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s222
-cp0-effort-limit	cp0-effort-limit	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s113
-cp0-outer-unroll-limit	cp0-outer-unroll-limit	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s113
-cp0-score-limit	cp0-score-limit	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s113
-cpu-time	(cpu-time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s201
+cost-center-allocation-count	(cost-center-allocation-count cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s248
+cost-center-instruction-count	(cost-center-instruction-count cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s247
+cost-center-time	(cost-center-time cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s249
+cost-center?	(cost-center? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s245
+cp0-effort-limit	cp0-effort-limit	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s123
+cp0-outer-unroll-limit	cp0-outer-unroll-limit	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s123
+cp0-score-limit	cp0-score-limit	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s123
+cpu-time	(cpu-time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s224
 create-exception-state	(create-exception-state)~(create-exception-state procedure)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s15
 critical-section	(critical-section body1 body2 ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s27
-current-date	(current-date)~(current-date offset)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s190
-current-directory	current-directory	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s127
-current-error-port	current-error-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s68
+current-date	(current-date)~(current-date offset)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s213
+current-directory	current-directory	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s136
+current-error-port	current-error-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s74
 current-eval	current-eval	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s39
 current-exception-state	current-exception-state	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s14
-current-expand	current-expand	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s84
-current-input-port	current-input-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s50
+current-expand	current-expand	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s92
+current-input-port	current-input-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s56
 current-locate-source-object-source	current-locate-source-object-source	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s74
 current-make-source-object	current-make-source-object	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s62
-current-memory-bytes	(current-memory-bytes)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s206
-current-output-port	current-output-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s66
-current-time	(current-time)~(current-time time-type)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s182
-current-transcoder	current-transcoder	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s9
-custom-port-buffer-size	custom-port-buffer-size	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s48
-date->time-utc	(date->time-utc date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s196
-date-and-time	(date-and-time)~(date-and-time date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s197
-date-day	(date-day date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s193
-date-dst?	(date-dst? date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s195
-date-hour	(date-hour date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s193
-date-minute	(date-minute date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s193
-date-month	(date-month date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s193
-date-nanosecond	(date-nanosecond date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s193
-date-second	(date-second date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s193
-date-week-day	(date-week-day date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s194
-date-year	(date-year date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s193
-date-year-day	(date-year-day date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s194
-date-zone-name	(date-zone-name date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s195
-date-zone-offset	(date-zone-offset date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s193
-date?	(date? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s192
+current-memory-bytes	(current-memory-bytes)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s229
+current-output-port	current-output-port	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s72
+current-time	(current-time)~(current-time time-type)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s205
+current-transcoder	current-transcoder	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s11
+custom-port-buffer-size	custom-port-buffer-size	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s54
+date->time-utc	(date->time-utc date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s219
+date-and-time	(date-and-time)~(date-and-time date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s220
+date-day	(date-day date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
+date-dst?	(date-dst? date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s218
+date-hour	(date-hour date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
+date-minute	(date-minute date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
+date-month	(date-month date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
+date-nanosecond	(date-nanosecond date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
+date-second	(date-second date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
+date-week-day	(date-week-day date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s217
+date-year	(date-year date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
+date-year-day	(date-year-day date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s217
+date-zone-name	(date-zone-name date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s218
+date-zone-offset	(date-zone-offset date)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
+date?	(date? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s215
 datum	(datum template)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s9
 datum->syntax-object	(datum->syntax-object template-identifier obj)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s10
 debug	(debug)	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s16
 debug-condition	debug-condition	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s13
-debug-level	debug-level	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s102
+debug-level	debug-level	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s110
 debug-on-exception	debug-on-exception	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s10
 decode-float	(decode-float x)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s30
 default-exception-handler	(default-exception-handler obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s8
 default-library-search-handler	(default-library-search-handler who library directories extensions)	https://cisco.github.io/ChezScheme/csug9.5/libraries.html#./libraries:s29
-default-prompt-and-read	(default-prompt-and-read level)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s156
-default-record-equal-procedure	default-record-equal-procedure	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s158
-default-record-hash-procedure	default-record-hash-procedure	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s159
+default-prompt-and-read	(default-prompt-and-read level)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s179
+default-record-equal-procedure	default-record-equal-procedure	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s160
+default-record-hash-procedure	default-record-hash-procedure	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s161
 define-ftype	(define-ftype ftype-name ftype)~(define-ftype (ftype-name ftype) ...)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s137
 define-property	(define-property id key expr)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s18
-define-record	(define-record name (fld1 ...) ((fld2 init) ...) (opt ...))~(define-record name parent (fld1 ...) ((fld2 init) ...) (opt ...))	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s170
+define-record	(define-record name (fld1 ...) ((fld2 init) ...) (opt ...))~(define-record name parent (fld1 ...) ((fld2 init) ...) (opt ...))	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s172
 define-structure	(define-structure (name id1 ...) ((id2 expr) ...))	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s25
 define-top-level-syntax	(define-top-level-syntax symbol obj)~(define-top-level-syntax symbol obj env)	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s32
 define-top-level-value	(define-top-level-value symbol obj)~(define-top-level-value symbol obj env)	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s24
 define-values	(define-values formals expr)	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s16
-delete-directory	(delete-directory path)~(delete-directory path error?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s136
-delete-file	(delete-file path)~(delete-file path error?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s135
-directory-list	(directory-list path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s128
-directory-separator	(directory-separator)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s141
-directory-separator?	(directory-separator? char)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s140
+delete-directory	(delete-directory path)~(delete-directory path error?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s145
+delete-file	(delete-file path)~(delete-file path error?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s144
+directory-list	(directory-list path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s137
+directory-separator	(directory-separator)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s150
+directory-separator?	(directory-separator? char)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s149
 disable-interrupts	(disable-interrupts)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s26
 display-condition	(display-condition obj)~(display-condition obj textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s7
-display-statistics	(display-statistics)~(display-statistics textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s200
-display-string	(display-string string)~(display-string string textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s77
+display-statistics	(display-statistics)~(display-statistics textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s223
+display-string	(display-string string)~(display-string string textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s85
 drop-prefix	drop-prefix	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s22
 dynamic-wind	(dynamic-wind in body out)~(dynamic-wind critical? in body out)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s11
 ee-auto-indent	ee-auto-indent	https://cisco.github.io/ChezScheme/csug9.5/expeditor.html#./expeditor:s1
@@ -238,9 +241,9 @@ ee-noisy	ee-noisy	https://cisco.github.io/ChezScheme/csug9.5/expeditor.html#./ex
 ee-paren-flash-delay	ee-paren-flash-delay	https://cisco.github.io/ChezScheme/csug9.5/expeditor.html#./expeditor:s5
 ee-standard-indent	ee-standard-indent	https://cisco.github.io/ChezScheme/csug9.5/expeditor.html#./expeditor:s2
 ee-string-macro	(ee-string-macro string)	https://cisco.github.io/ChezScheme/csug9.5/expeditor.html#./expeditor:s77
-enable-cross-library-optimization	enable-cross-library-optimization	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s108
+enable-cross-library-optimization	enable-cross-library-optimization	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s116
 enable-interrupts	(enable-interrupts)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s26
-enable-object-counts	enable-object-counts	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s217
+enable-object-counts	enable-object-counts	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s240
 engine-block	(engine-block)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s27
 engine-return	(engine-return obj ...)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s28
 enum-set?	(enum-set? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s0
@@ -250,46 +253,46 @@ environment-symbols	(environment-symbols env)	https://cisco.github.io/ChezSchem
 environment?	(environment? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s29
 ephemeron-cons	(ephemeron-cons obj1 obj2)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s26
 ephemeron-pair?	(ephemeron-pair? obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s27
-eq-hashtable-cell	(eq-hashtable-cell hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s129
-eq-hashtable-contains?	(eq-hashtable-contains? hashtable key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s127
-eq-hashtable-delete!	(eq-hashtable-delete! hashtable key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s130
-eq-hashtable-ephemeron?	(eq-hashtable-ephemeron? hashtable)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s124
-eq-hashtable-ref	(eq-hashtable-ref hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s126
-eq-hashtable-set!	(eq-hashtable-set! hashtable key value)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s125
-eq-hashtable-update!	(eq-hashtable-update! hashtable key procedure default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s128
-eq-hashtable-weak?	(eq-hashtable-weak? hashtable)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s123
-eq-hashtable?	(eq-hashtable? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s122
+eq-hashtable-cell	(eq-hashtable-cell hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s131
+eq-hashtable-contains?	(eq-hashtable-contains? hashtable key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s129
+eq-hashtable-delete!	(eq-hashtable-delete! hashtable key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s132
+eq-hashtable-ephemeron?	(eq-hashtable-ephemeron? hashtable)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s126
+eq-hashtable-ref	(eq-hashtable-ref hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s128
+eq-hashtable-set!	(eq-hashtable-set! hashtable key value)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s127
+eq-hashtable-update!	(eq-hashtable-update! hashtable key procedure default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s130
+eq-hashtable-weak?	(eq-hashtable-weak? hashtable)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s125
+eq-hashtable?	(eq-hashtable? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s124
 errorf	(errorf who msg irritant ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s2
 eval	(eval obj)~(eval obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s38
-eval-syntax-expanders-when	eval-syntax-expanders-when	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s93
-eval-when	(eval-when situations form1 form2 ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s90
+eval-syntax-expanders-when	eval-syntax-expanders-when	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s101
+eval-when	(eval-when situations form1 form2 ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s98
 except	except	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s22
 exclusive-cond	(exclusive-cond clause1 clause2 ...)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s0
-exit	(exit obj ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s160
-exit-handler	exit-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s161
-expand	(expand obj)~(expand obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s82
-expand-output	expand-output	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s117
-expand/optimize	(expand/optimize obj)~(expand/optimize obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s88
-expand/optimize-output	expand/optimize-output	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s117
+exit	(exit obj ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s183
+exit-handler	exit-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s184
+expand	(expand obj)~(expand obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s90
+expand-output	expand-output	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s127
+expand/optimize	(expand/optimize obj)~(expand/optimize obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s96
+expand/optimize-output	expand/optimize-output	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s127
 export	(export export-spec ...)	https://cisco.github.io/ChezScheme/csug9.5/libraries.html#./libraries:s17
 expression-editor	expression-editor	https://cisco.github.io/ChezScheme/csug9.5/expeditor.html#./expeditor:s0
 expt-mod	(expt-mod int1 int2 int3)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s69
 extend-syntax	(extend-syntax (name key ...) (pat fender template) ...)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s8
-fasl-file	(fasl-file ifn ofn)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s126
-fasl-read	(fasl-read binary-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s125
-fasl-strip-options	(fasl-strip-options symbol ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s80
-fasl-write	(fasl-write obj binary-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s125
-file-access-time	(file-access-time path/port)~(file-access-time path/port follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s133
-file-buffer-size	file-buffer-size	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s45
-file-change-time	(file-change-time path/port)~(file-change-time path/port follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s133
-file-directory?	(file-directory? path)~(file-directory? path follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s131
-file-exists?	(file-exists? path)~(file-exists? path follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s129
-file-length	(file-length port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s29
-file-modification-time	(file-modification-time path/port)~(file-modification-time path/port follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s133
-file-port?	(file-port? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s46
-file-position	(file-position port)~(file-position port pos)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s33
-file-regular?	(file-regular? path)~(file-regular? path follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s130
-file-symbolic-link?	(file-symbolic-link? path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s132
+fasl-file	(fasl-file ifn ofn)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s135
+fasl-read	(fasl-read binary-input-port)~(fasl-read binary-input-port situation)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s134
+fasl-strip-options	(fasl-strip-options symbol ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s88
+fasl-write	(fasl-write obj binary-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s133
+file-access-time	(file-access-time path/port)~(file-access-time path/port follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
+file-buffer-size	file-buffer-size	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s51
+file-change-time	(file-change-time path/port)~(file-change-time path/port follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
+file-directory?	(file-directory? path)~(file-directory? path follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s140
+file-exists?	(file-exists? path)~(file-exists? path follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s138
+file-length	(file-length port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s31
+file-modification-time	(file-modification-time path/port)~(file-modification-time path/port follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
+file-port?	(file-port? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s52
+file-position	(file-position port)~(file-position port pos)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s35
+file-regular?	(file-regular? path)~(file-regular? path follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s139
+file-symbolic-link?	(file-symbolic-link? path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s141
 fl-make-rectangular	(fl-make-rectangular flonum1 flonum2)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s35
 fl<	(fl< flonum1 flonum2 ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s28
 fl<=	(fl<= flonum1 flonum2 ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s28
@@ -302,7 +305,7 @@ flnonpositive?	(flnonpositive? fl)	https://cisco.github.io/ChezScheme/csug9.5/n
 flonum->fixnum	(flonum->fixnum flonum)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s26
 fluid-let	(fluid-let ((var expr) ...) body1 body2 ...)	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s19
 fluid-let-syntax	(fluid-let-syntax ((keyword expr) ...) form1 form2 ...)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s0
-flush-output-port	(flush-output-port)~(flush-output-port output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s36
+flush-output-port	(flush-output-port)~(flush-output-port output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s38
 foreign-address-name	(foreign-address-name address)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s159
 foreign-alloc	(foreign-alloc n)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s132
 foreign-callable	(foreign-callable conv ... proc-exp (param-type ...) res-type)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s127
@@ -316,16 +319,16 @@ foreign-ref	(foreign-ref type address offset)	https://cisco.github.io/ChezSch
 foreign-set!	(foreign-set! type address offset value)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s135
 foreign-sizeof	(foreign-sizeof type)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s136
 fork-thread	(fork-thread thunk)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s2
-format	(format format-string obj ...)~(format #f format-string obj ...)~(format #t format-string obj ...)~(format textual-output-port format-string obj ...)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s96
+format	(format format-string obj ...)~(format #f format-string obj ...)~(format #t format-string obj ...)~(format textual-output-port format-string obj ...)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s104
 format-condition?	(format-condition? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s4
-fprintf	(fprintf textual-output-port format-string obj ...)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s98
-fresh-line	(fresh-line)~(fresh-line textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s80
+fprintf	(fprintf textual-output-port format-string obj ...)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s106
+fresh-line	(fresh-line)~(fresh-line textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s88
 ftype-&ref	(ftype-&ref ftype-name (a ...) fptr-expr)~(ftype-&ref ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s151
-ftype-guardian	(ftype-guardian ftype-name)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s20
-ftype-init-lock!	(ftype-init-lock! ftype-name (a ...) fptr-expr)~(ftype-init-lock! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s17
-ftype-lock!	(ftype-lock! ftype-name (a ...) fptr-expr)~(ftype-lock! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s17
-ftype-locked-decr!	(ftype-locked-decr! ftype-name (a ...) fptr-expr)~(ftype-locked-decr! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s18
-ftype-locked-incr!	(ftype-locked-incr! ftype-name (a ...) fptr-expr)~(ftype-locked-incr! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s18
+ftype-guardian	(ftype-guardian ftype-name)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s25
+ftype-init-lock!	(ftype-init-lock! ftype-name (a ...) fptr-expr)~(ftype-init-lock! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s19
+ftype-lock!	(ftype-lock! ftype-name (a ...) fptr-expr)~(ftype-lock! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s19
+ftype-locked-decr!	(ftype-locked-decr! ftype-name (a ...) fptr-expr)~(ftype-locked-decr! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s20
+ftype-locked-incr!	(ftype-locked-incr! ftype-name (a ...) fptr-expr)~(ftype-locked-incr! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s20
 ftype-pointer->sexpr	(ftype-pointer->sexpr fptr)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s156
 ftype-pointer-address	(ftype-pointer-address fptr)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s148
 ftype-pointer-ftype	(ftype-pointer-ftype fptr)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s155
@@ -335,8 +338,8 @@ ftype-pointer?	(ftype-pointer? obj)~(ftype-pointer? ftype-name obj)	https://c
 ftype-ref	(ftype-ref ftype-name (a ...) fptr-expr)~(ftype-ref ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s152
 ftype-set!	(ftype-set! ftype-name (a ...) fptr-expr val-expr)~(ftype-set! ftype-name (a ...) fptr-expr index val-expr)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s152
 ftype-sizeof	(ftype-sizeof ftype-name)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s142
-ftype-spin-lock!	(ftype-spin-lock! ftype-name (a ...) fptr-expr)~(ftype-spin-lock! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s17
-ftype-unlock!	(ftype-unlock! ftype-name (a ...) fptr-expr)~(ftype-unlock! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s17
+ftype-spin-lock!	(ftype-spin-lock! ftype-name (a ...) fptr-expr)~(ftype-spin-lock! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s19
+ftype-unlock!	(ftype-unlock! ftype-name (a ...) fptr-expr)~(ftype-unlock! ftype-name (a ...) fptr-expr index)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s19
 fx*	(fx* fixnum ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s19
 fx+	(fx+ fixnum ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s17
 fx-	(fx- fixnum1 fixnum2 ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s18
@@ -375,45 +378,48 @@ fxvector-length	(fxvector-length fxvector)	https://cisco.github.io/ChezScheme/c
 fxvector-ref	(fxvector-ref fxvector n)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s46
 fxvector-set!	(fxvector-set! fxvector n fixnum)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s47
 fxvector?	(fxvector? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s42
-generate-allocation-counts	generate-allocation-counts	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s219
-generate-inspector-information	generate-inspector-information	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s106
-generate-instruction-counts	generate-instruction-counts	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s220
-generate-interrupt-trap	generate-interrupt-trap	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s103
-generate-procedure-source-information	generate-procedure-source-information	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s107
-generate-profile-forms	(generate-profile-forms)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s135
-generate-wpo-files	generate-wpo-files	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s109
-gensym	(gensym)~(gensym pretty-name)~(gensym pretty-name unique-name)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s90
-gensym->unique-string	(gensym->unique-string gensym)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s100
-gensym-count	gensym-count	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s98
-gensym-prefix	gensym-prefix	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s98
-gensym?	(gensym? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s101
-get-bytevector-some!	(get-bytevector-some! binary-input-port bytevector start n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s58
+generate-allocation-counts	generate-allocation-counts	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s242
+generate-covin-files	generate-covin-files	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s145
+generate-inspector-information	generate-inspector-information	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s114
+generate-instruction-counts	generate-instruction-counts	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s243
+generate-interrupt-trap	generate-interrupt-trap	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s111
+generate-procedure-source-information	generate-procedure-source-information	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s115
+generate-profile-forms	(generate-profile-forms)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s148
+generate-wpo-files	generate-wpo-files	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s117
+gensym	(gensym)~(gensym pretty-name)~(gensym pretty-name unique-name)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s92
+gensym->unique-string	(gensym->unique-string gensym)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s102
+gensym-count	gensym-count	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s100
+gensym-prefix	gensym-prefix	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s100
+gensym?	(gensym? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s103
+get-bytevector-some!	(get-bytevector-some! binary-input-port bytevector start n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s64
 get-datum/annotations	(get-datum/annotations textual-input-port sfd bfp)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s70
 get-hash-table	(get-hash-table ht k d)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s3
-get-mode	(get-mode path)~(get-mode path follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s139
-get-output-string	(get-output-string string-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s43
-get-process-id	(get-process-id)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s239
-get-registry	(get-registry key)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s242
-get-string-some	(get-string-some textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s56
-get-string-some!	(get-string-some! textual-input-port string start n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s57
+get-mode	(get-mode path)~(get-mode path follow?)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s148
+get-output-string	(get-output-string string-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s49
+get-process-id	(get-process-id)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s262
+get-registry	(get-registry key)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s265
+get-source-table!	(get-source-table! textual-input-port source-table)~(get-source-table! textual-input-port source-table combine)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s90
+get-string-some	(get-string-some textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s62
+get-string-some!	(get-string-some! textual-input-port string start n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s63
 get-thread-id	(get-thread-id)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s4
-getenv	(getenv key)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s240
-getprop	(getprop symbol key)~(getprop symbol key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s104
+getenv	(getenv key)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s263
+getprop	(getprop symbol key)~(getprop symbol key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s106
+guardian?	(guardian? obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s31
 hash-table-for-each	(hash-table-for-each ht p)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s6
 hash-table-map	(hash-table-map ht p)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s5
 hash-table?	(hash-table? obj)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s1
-hashtable-cell	(hashtable-cell hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s113
-hashtable-cells	(hashtable-cells hashtable)~(hashtable-cells hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s117
-hashtable-entries	(hashtable-entries hashtable)~(hashtable-entries hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s116
-hashtable-ephemeron?	(hashtable-ephemeron? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s121
-hashtable-keys	(hashtable-keys hashtable)~(hashtable-keys hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s114
-hashtable-values	(hashtable-values hashtable)~(hashtable-values hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s115
-hashtable-weak?	(hashtable-weak? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s120
+hashtable-cell	(hashtable-cell hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s115
+hashtable-cells	(hashtable-cells hashtable)~(hashtable-cells hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s119
+hashtable-entries	(hashtable-entries hashtable)~(hashtable-entries hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s118
+hashtable-ephemeron?	(hashtable-ephemeron? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s123
+hashtable-keys	(hashtable-keys hashtable)~(hashtable-keys hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s116
+hashtable-values	(hashtable-values hashtable)~(hashtable-values hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s117
+hashtable-weak?	(hashtable-weak? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s122
 heap-reserve-ratio	heap-reserve-ratio	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s19
-iconv-codec	(iconv-codec code-page)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s8
+iconv-codec	(iconv-codec code-page)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s10
 ieee	ieee	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s33
 ieee-environment	(ieee-environment)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s32
-immutable-box?	(immutable-box? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s84
+immutable-box?	(immutable-box? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s86
 immutable-bytevector?	(immutable-bytevector? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s65
 immutable-fxvector?	(immutable-fxvector? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s52
 immutable-string?	(immutable-string? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s24
@@ -424,13 +430,13 @@ import-notify	import-notify	https://cisco.github.io/ChezScheme/csug9.5/libraries
 import-only	(import-only import-spec ...)	https://cisco.github.io/ChezScheme/csug9.5/libraries.html#./libraries:s16
 include	(include path)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s12
 indirect-export	(indirect-export id indirect-id ...)	https://cisco.github.io/ChezScheme/csug9.5/libraries.html#./libraries:s18
-initial-bytes-allocated	(initial-bytes-allocated)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s204
-input-port-ready?	(input-port-ready? input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s61
+initial-bytes-allocated	(initial-bytes-allocated)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s227
+input-port-ready?	(input-port-ready? input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s67
 inspect	(inspect obj)	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s22
 inspect/object	(inspect/object object)	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s25
 integer-length	(integer-length n)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s71
 interaction-environment	interaction-environment	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s33
-interactive?	(interactive?)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s238
+interactive?	(interactive?)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s261
 internal-defines-as-letrec*	internal-defines-as-letrec*	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s15
 interpret	(interpret obj)~(interpret obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s44
 iota	(iota n)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s8
@@ -453,14 +459,14 @@ list-copy	(list-copy list)	https://cisco.github.io/ChezScheme/csug9.5/objects.h
 list-head	(list-head list n)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s3
 literal-identifier=?	(literal-identifier=? identifier1 identifier2)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s14
 load	(load path)~(load path eval-proc)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s45
-load-compiled-from-port	(load-compiled-from-port input-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s50
+load-compiled-from-port	(load-compiled-from-port input-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s56
 load-library	(load-library path)~(load-library path eval-proc)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s47
 load-program	(load-program path)~(load-program path eval-proc)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s48
 load-shared-object	(load-shared-object path)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s160
 locate-source	(locate-source sfd pos)~(locate-source sfd pos use-cache?)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s72
 locate-source-object-source	(locate-source-object-source source-object get-start? use-cache?)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s73
-lock-object	(lock-object obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s31
-locked-object?	(locked-object? obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s34
+lock-object	(lock-object obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s36
+locked-object?	(locked-object? obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s39
 logand	(logand int ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s44
 logbit0	(logbit0 index int)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s50
 logbit1	(logbit1 index int)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s51
@@ -470,256 +476,260 @@ lognot	(lognot int)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./n
 logor	(logor int ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s45
 logtest	(logtest int1 int2)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s49
 logxor	(logxor int ...)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s46
-machine-type	(machine-type)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s81
+machine-type	(machine-type)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s89
 magnitude-squared	(magnitude-squared num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s75
 make-annotation	(make-annotation obj source-object stripped-obj)~(make-annotation obj source-object stripped-obj options)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s49
-make-boot-file	(make-boot-file output-filename base-boot-list input-filename ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s75
-make-boot-header	(make-boot-header output-filename base-boot1 base-boot2...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s78
+make-boot-file	(make-boot-file output-filename base-boot-list input-filename ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s83
+make-boot-header	(make-boot-header output-filename base-boot1 base-boot2...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s86
 make-compile-time-value	(make-compile-time-value obj)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s15
-make-condition	(make-condition)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s11
+make-condition	(make-condition)~(make-condition name)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s12
 make-continuation-condition	(make-continuation-condition continuation)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s6
-make-cost-center	(make-cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s221
-make-date	(make-date nsec sec min hour day mon year)~(make-date nsec sec min hour day mon year offset)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s191
+make-cost-center	(make-cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s244
+make-date	(make-date nsec sec min hour day mon year)~(make-date nsec sec min hour day mon year offset)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s214
 make-engine	(make-engine thunk)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s16
-make-ephemeron-eq-hashtable	(make-ephemeron-eq-hashtable)~(make-ephemeron-eq-hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s119
-make-ephemeron-eqv-hashtable	(make-ephemeron-eqv-hashtable)~(make-ephemeron-eqv-hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s119
+make-ephemeron-eq-hashtable	(make-ephemeron-eq-hashtable)~(make-ephemeron-eq-hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s121
+make-ephemeron-eqv-hashtable	(make-ephemeron-eqv-hashtable)~(make-ephemeron-eqv-hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s121
 make-format-condition	(make-format-condition)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s4
 make-ftype-pointer	(make-ftype-pointer ftype-name expr)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s143
 make-fxvector	(make-fxvector n)~(make-fxvector n fixnum)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s44
 make-guardian	(make-guardian)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s29
 make-hash-table	(make-hash-table)~(make-hash-table weak?)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s0
-make-input-port	(make-input-port handler input-buffer)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s11
-make-input/output-port	(make-input/output-port handler input-buffer output-buffer)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s11
+make-input-port	(make-input-port handler input-buffer)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s13
+make-input/output-port	(make-input/output-port handler input-buffer output-buffer)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s13
 make-list	(make-list n)~(make-list n obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s7
-make-mutex	(make-mutex)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s6
+make-mutex	(make-mutex)~(make-mutex name)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s6
 make-object-finder	(make-object-finder pred)~(make-object-finder pred g)~(make-object-finder pred x g)	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s26
-make-output-port	(make-output-port handler output-buffer)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s11
-make-parameter	(make-parameter object)~(make-parameter object procedure)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s228
-make-record-type	(make-record-type type-name fields)~(make-record-type parent-rtd type-name fields)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s184
+make-output-port	(make-output-port handler output-buffer)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s13
+make-parameter	(make-parameter object)~(make-parameter object procedure)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s251
+make-record-type	(make-record-type type-name fields)~(make-record-type parent-rtd type-name fields)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s186
 make-source-condition	(make-source-condition form)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s5
 make-source-file-descriptor	(make-source-file-descriptor string binary-input-port)~(make-source-file-descriptor string binary-input-port reset?)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s63
 make-source-object	(make-source-object sfd bfp efp)~(make-source-object sfd bfp efp line column)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s55
-make-sstats	(make-sstats cpu real bytes gc-count gc-cpu gc-real gc-bytes)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s211
-make-thread-parameter	(make-thread-parameter object)~(make-thread-parameter object procedure)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s25
-make-time	(make-time type nsec sec)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s183
-make-weak-eq-hashtable	(make-weak-eq-hashtable)~(make-weak-eq-hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s118
-make-weak-eqv-hashtable	(make-weak-eqv-hashtable)~(make-weak-eqv-hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s118
-mark-port-closed!	(mark-port-closed! port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s22
-maximum-memory-bytes	(maximum-memory-bytes)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s207
-maybe-compile-file	(maybe-compile-file input-filename)~(maybe-compile-file input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s64
-maybe-compile-library	(maybe-compile-library input-filename)~(maybe-compile-library input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s64
-maybe-compile-program	(maybe-compile-program input-filename)~(maybe-compile-program input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s64
-merge	(merge predicate list1 list2)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s112
-merge!	(merge! predicate list1 list2)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s112
+make-source-table	(make-source-table)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s81
+make-sstats	(make-sstats cpu real bytes gc-count gc-cpu gc-real gc-bytes)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s234
+make-thread-parameter	(make-thread-parameter object)~(make-thread-parameter object procedure)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s30
+make-time	(make-time type nsec sec)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s206
+make-weak-eq-hashtable	(make-weak-eq-hashtable)~(make-weak-eq-hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s120
+make-weak-eqv-hashtable	(make-weak-eqv-hashtable)~(make-weak-eqv-hashtable size)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s120
+mark-port-closed!	(mark-port-closed! port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s24
+maximum-memory-bytes	(maximum-memory-bytes)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s230
+maybe-compile-file	(maybe-compile-file input-filename)~(maybe-compile-file input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s72
+maybe-compile-library	(maybe-compile-library input-filename)~(maybe-compile-library input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s72
+maybe-compile-program	(maybe-compile-program input-filename)~(maybe-compile-program input-filename output-filename)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s72
+merge	(merge predicate list1 list2)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s114
+merge!	(merge! predicate list1 list2)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s114
 meta	(meta . definition)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s36
 meta-cond	(meta-cond clause1 clause2 ...)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s37
-mkdir	(mkdir path)~(mkdir path mode)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s134
+mkdir	(mkdir path)~(mkdir path mode)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s143
 module	(module name interface defn ... init ...)~(module interface defn ... init ...)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s21
 most-negative-fixnum	(most-negative-fixnum)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s14
 most-positive-fixnum	(most-positive-fixnum)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s14
-multibyte->string	(multibyte->string code-page bytevector)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s84
-mutable-box?	(mutable-box? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s84
+multibyte->string	(multibyte->string code-page bytevector)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s92
+mutable-box?	(mutable-box? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s86
 mutable-bytevector?	(mutable-bytevector? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s65
 mutable-fxvector?	(mutable-fxvector? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s52
 mutable-string?	(mutable-string? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s24
 mutable-vector?	(mutable-vector? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s34
 mutex-acquire	(mutex-acquire mutex)~(mutex-acquire mutex block?)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s8
+mutex-name	(mutex-name mutex)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s11
 mutex-release	(mutex-release mutex)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s9
 mutex?	(mutex? obj)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s7
-new-cafe	(new-cafe)~(new-cafe eval-proc)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s147
+new-cafe	(new-cafe)~(new-cafe eval-proc)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s170
 nonnegative?	(nonnegative? real)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s73
 nonpositive?	(nonpositive? real)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s72
 number->string	(number->string num)~(number->string num radix)~(number->string num radix precision)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s79
-object-counts	(object-counts)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s218
-oblist	(oblist)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s109
+object-counts	(object-counts)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s241
+oblist	(oblist)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s111
 only	only	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s22
-open-fd-input-port	(open-fd-input-port fd)~(open-fd-input-port fd b-mode)~(open-fd-input-port fd b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s54
-open-fd-input/output-port	(open-fd-input/output-port fd)~(open-fd-input/output-port fd b-mode)~(open-fd-input/output-port fd b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s82
-open-fd-output-port	(open-fd-output-port fd)~(open-fd-output-port fd b-mode)~(open-fd-output-port fd b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s72
-open-input-file	(open-input-file path)~(open-input-file path options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s51
-open-input-output-file	(open-input-output-file path)~(open-input-output-file path options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s81
-open-input-string	(open-input-string string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s38
-open-output-file	(open-output-file path)~(open-output-file path options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s69
-open-output-string	(open-output-string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s41
+open-fd-input-port	(open-fd-input-port fd)~(open-fd-input-port fd b-mode)~(open-fd-input-port fd b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s60
+open-fd-input/output-port	(open-fd-input/output-port fd)~(open-fd-input/output-port fd b-mode)~(open-fd-input/output-port fd b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s90
+open-fd-output-port	(open-fd-output-port fd)~(open-fd-output-port fd b-mode)~(open-fd-output-port fd b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s80
+open-input-file	(open-input-file path)~(open-input-file path options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s57
+open-input-output-file	(open-input-output-file path)~(open-input-output-file path options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s89
+open-input-string	(open-input-string string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s44
+open-output-file	(open-output-file path)~(open-output-file path options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s75
+open-output-string	(open-output-string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s47
 open-process-ports	(open-process-ports command)~(open-process-ports command b-mode)~(open-process-ports command b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s5
 open-source-file	(open-source-file sfd)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s71
-optimize-level	optimize-level	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s96
+optimize-level	optimize-level	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s104
 ormap	(ormap procedure list1 list2 ...)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s7
-parameterize	(parameterize ((param expr) ...) body1 body2 ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s230
-pariah	(pariah expr1 expr2 ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s120
-path-absolute?	(path-absolute? path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
-path-extension	(path-extension path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
-path-first	(path-first path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
-path-last	(path-last path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
-path-parent	(path-parent path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
-path-rest	(path-rest path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
-path-root	(path-root path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s142
-petite?	(petite?)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s236
-port-bol?	(port-bol? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s25
-port-closed?	(port-closed? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s23
-port-file-compressed!	(port-file-compressed! port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s37
-port-file-descriptor	(port-file-descriptor port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s47
-port-handler	(port-handler port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s13
-port-has-port-length?	(port-has-port-length? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s29
-port-has-port-nonblocking??	(port-has-port-nonblocking?? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s31
-port-has-set-port-length!?	(port-has-set-port-length!? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s30
-port-has-set-port-nonblocking!?	(port-has-set-port-nonblocking!? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s32
-port-input-buffer	(port-input-buffer input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-port-input-count	(port-input-count input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
-port-input-empty?	(port-input-empty? input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
-port-input-index	(port-input-index input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-port-input-size	(port-input-size input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-port-length	(port-length port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s29
-port-name	(port-name port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s27
-port-nonblocking?	(port-nonblocking? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s31
-port-output-buffer	(port-output-buffer output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-port-output-count	(port-output-count output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
-port-output-full?	(port-output-full? output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
-port-output-index	(port-output-index output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-port-output-size	(port-output-size output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-predicate	predicate	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s174
-prefix	prefix	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s174
-pretty-file	(pretty-file ifn ofn)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s86
-pretty-format	(pretty-format sym)~(pretty-format sym fmt)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s87
-pretty-initial-indent	pretty-initial-indent	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s92
-pretty-line-length	pretty-line-length	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s90
-pretty-maximum-lines	pretty-maximum-lines	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s95
-pretty-one-line-limit	pretty-one-line-limit	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s90
-pretty-print	(pretty-print obj)~(pretty-print obj textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s85
-pretty-standard-indent	pretty-standard-indent	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s94
-print-brackets	print-brackets	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s117
-print-char-name	print-char-name	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s100
-print-extended-identifiers	print-extended-identifiers	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s119
-print-gensym	print-gensym	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s112
-print-graph	print-graph	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s102
-print-length	print-length	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s106
-print-level	print-level	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s106
-print-precision	print-precision	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s122
-print-radix	print-radix	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s111
-print-record	print-record	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s183
-print-unicode	print-unicode	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s123
-print-vector-length	print-vector-length	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s120
-printf	(printf format-string obj ...)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s98
-procedure-arity-mask	(procedure-arity-mask proc)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s198
+parameterize	(parameterize ((param expr) ...) body1 body2 ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s253
+pariah	(pariah expr1 expr2 ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s130
+path-absolute?	(path-absolute? path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s151
+path-extension	(path-extension path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s151
+path-first	(path-first path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s151
+path-last	(path-last path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s151
+path-parent	(path-parent path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s151
+path-rest	(path-rest path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s151
+path-root	(path-root path)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s151
+petite?	(petite?)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s259
+port-bol?	(port-bol? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s27
+port-closed?	(port-closed? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s25
+port-file-compressed!	(port-file-compressed! port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s39
+port-file-descriptor	(port-file-descriptor port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s53
+port-handler	(port-handler port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
+port-has-port-length?	(port-has-port-length? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s31
+port-has-port-nonblocking??	(port-has-port-nonblocking?? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s33
+port-has-set-port-length!?	(port-has-set-port-length!? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s32
+port-has-set-port-nonblocking!?	(port-has-set-port-nonblocking!? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s34
+port-input-buffer	(port-input-buffer input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+port-input-count	(port-input-count input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
+port-input-empty?	(port-input-empty? input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
+port-input-index	(port-input-index input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+port-input-size	(port-input-size input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+port-length	(port-length port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s31
+port-name	(port-name port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s29
+port-nonblocking?	(port-nonblocking? port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s33
+port-output-buffer	(port-output-buffer output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+port-output-count	(port-output-count output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s22
+port-output-full?	(port-output-full? output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s23
+port-output-index	(port-output-index output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+port-output-size	(port-output-size output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+predicate	predicate	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s176
+prefix	prefix	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s176
+pretty-file	(pretty-file ifn ofn)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s94
+pretty-format	(pretty-format sym)~(pretty-format sym fmt)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s95
+pretty-initial-indent	pretty-initial-indent	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s100
+pretty-line-length	pretty-line-length	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s98
+pretty-maximum-lines	pretty-maximum-lines	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s103
+pretty-one-line-limit	pretty-one-line-limit	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s98
+pretty-print	(pretty-print obj)~(pretty-print obj textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s93
+pretty-standard-indent	pretty-standard-indent	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s102
+print-brackets	print-brackets	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s125
+print-char-name	print-char-name	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s108
+print-extended-identifiers	print-extended-identifiers	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s127
+print-gensym	print-gensym	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s120
+print-graph	print-graph	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s110
+print-length	print-length	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s114
+print-level	print-level	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s114
+print-precision	print-precision	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s130
+print-radix	print-radix	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s119
+print-record	print-record	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s185
+print-unicode	print-unicode	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s131
+print-vector-length	print-vector-length	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s128
+printf	(printf format-string obj ...)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s106
+procedure-arity-mask	(procedure-arity-mask proc)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s200
 process	(process command)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s7
-profile	(profile source-object)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s134
-profile-clear	(profile-clear)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s136
-profile-clear-database	(profile-clear-database)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s146
-profile-dump	(profile-dump)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s138
-profile-dump-data	(profile-dump-data path)~(profile-dump-data path dump)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s143
-profile-dump-html	(profile-dump-html)~(profile-dump-html prefix)~(profile-dump-html prefix dump)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s139
-profile-dump-list	(profile-dump-list)~(profile-dump-list warn?)~(profile-dump-list warn? dump)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s142
-profile-line-number-color	(profile-line-number-color)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s141
-profile-load-data	(profile-load-data path ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s144
-profile-palette	(profile-palette)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s140
-profile-query-weight	(profile-query-weight obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s145
-profile-release-counters	(profile-release-counters)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s137
-property-list	(property-list symbol)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s108
-put-bytevector-some	(put-bytevector-some binary-output-port bytevector)~(put-bytevector-some binary-output-port bytevector start)~(put-bytevector-some binary-output-port bytevector start n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s75
+profile	(profile source-object)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s147
+profile-clear	(profile-clear)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s149
+profile-clear-database	(profile-clear-database)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s169
+profile-dump	(profile-dump)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s151
+profile-dump-data	(profile-dump-data path)~(profile-dump-data path dump)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s166
+profile-dump-html	(profile-dump-html)~(profile-dump-html prefix)~(profile-dump-html prefix dump)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s162
+profile-dump-list	(profile-dump-list)~(profile-dump-list warn?)~(profile-dump-list warn? dump)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s165
+profile-line-number-color	(profile-line-number-color)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s164
+profile-load-data	(profile-load-data path ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s167
+profile-palette	(profile-palette)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s163
+profile-query-weight	(profile-query-weight obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s168
+profile-release-counters	(profile-release-counters)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s150
+property-list	(property-list symbol)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s110
+put-bytevector-some	(put-bytevector-some binary-output-port bytevector)~(put-bytevector-some binary-output-port bytevector start)~(put-bytevector-some binary-output-port bytevector start n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s83
 put-hash-table!	(put-hash-table! ht k v)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s2
-put-registry!	(put-registry! key val)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s242
-put-string-some	(put-string-some textual-output-port string)~(put-string-some textual-output-port string start)~(put-string-some textual-output-port string start n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s76
-putenv	(putenv key value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s241
-putprop	(putprop symbol key value)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s102
+put-registry!	(put-registry! key val)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s265
+put-source-table	(put-source-table textual-output-port source-table)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s89
+put-string-some	(put-string-some textual-output-port string)~(put-string-some textual-output-port string start)~(put-string-some textual-output-port string start n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s84
+putenv	(putenv key value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s264
+putprop	(putprop symbol key value)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s104
 r5rs	r5rs	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s29
 r5rs-syntax	r5rs-syntax	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s31
 random	(random real)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s64
 random-seed	random-seed	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s65
 ratnum?	(ratnum? obj)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s12
-read-token	(read-token)~(read-token textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s64
-real-time	(real-time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s202
+read-token	(read-token)~(read-token textual-input-port)~(read-token textual-input-port sfd bfp)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s70
+real-time	(real-time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s225
 rec	(rec var expr)	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s17
 record-case	(record-case expr clause1 clause2 ...)	https://cisco.github.io/ChezScheme/csug9.5/control.html#./control:s3
-record-constructor	(record-constructor rcd)~(record-constructor rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s187
+record-constructor	(record-constructor rcd)~(record-constructor rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s189
 record-constructor-descriptor?	(record-constructor-descriptor? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s1
-record-equal-procedure	(record-equal-procedure record1 record2)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s155
-record-field-accessible?	(record-field-accessible? rtd field-id)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s189
-record-field-accessor	(record-field-accessor rtd field-id)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s188
-record-field-mutable?	(record-field-mutable? rtd field-id)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s191
-record-field-mutator	(record-field-mutator rtd field-id)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s190
-record-hash-procedure	(record-hash-procedure record)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s157
-record-reader	(record-reader name)~(record-reader rtd)~(record-reader name rtd)~(record-reader name #f)~(record-reader rtd #f)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s178
-record-type-descriptor	(record-type-descriptor rec)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s197
-record-type-equal-procedure	(record-type-equal-procedure rtd equal-proc)~(record-type-equal-procedure rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s154
-record-type-field-decls	(record-type-field-decls rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s195
-record-type-field-names	(record-type-field-names rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s194
-record-type-hash-procedure	(record-type-hash-procedure rtd hash-proc)~(record-type-hash-procedure rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s156
-record-type-name	(record-type-name rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s192
-record-type-symbol	(record-type-symbol rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s193
-record-writer	(record-writer rtd)~(record-writer rtd procedure)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s179
-record?	(record? obj)~(record? obj rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s196
+record-equal-procedure	(record-equal-procedure record1 record2)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s157
+record-field-accessible?	(record-field-accessible? rtd field-id)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s191
+record-field-accessor	(record-field-accessor rtd field-id)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s190
+record-field-mutable?	(record-field-mutable? rtd field-id)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s193
+record-field-mutator	(record-field-mutator rtd field-id)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s192
+record-hash-procedure	(record-hash-procedure record)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s159
+record-reader	(record-reader name)~(record-reader rtd)~(record-reader name rtd)~(record-reader name #f)~(record-reader rtd #f)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s180
+record-type-descriptor	(record-type-descriptor rec)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s199
+record-type-equal-procedure	(record-type-equal-procedure rtd equal-proc)~(record-type-equal-procedure rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s156
+record-type-field-decls	(record-type-field-decls rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s197
+record-type-field-names	(record-type-field-names rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s196
+record-type-hash-procedure	(record-type-hash-procedure rtd hash-proc)~(record-type-hash-procedure rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s158
+record-type-name	(record-type-name rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s194
+record-type-symbol	(record-type-symbol rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s195
+record-writer	(record-writer rtd)~(record-writer rtd procedure)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s181
+record?	(record? obj)~(record? obj rtd)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s198
 register-signal-handler	(register-signal-handler sig procedure)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s28
 release-minimum-generation	release-minimum-generation	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s18
 remove!	(remove! obj list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s10
 remove-foreign-entry	(remove-foreign-entry entry-name)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s162
 remove-hash-table!	(remove-hash-table! ht k)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s4
-remove-registry!	(remove-registry! key)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s242
-remprop	(remprop symbol key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s106
+remove-registry!	(remove-registry! key)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s265
+remprop	(remprop symbol key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s108
 remq!	(remq! obj list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s10
 remv!	(remv! obj list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s10
 rename	rename	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s22
-rename-file	(rename-file old-pathname new-pathname)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s137
-require-nongenerative-clause	require-nongenerative-clause	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s140
-reset	(reset)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s158
-reset-cost-center!	(reset-cost-center! cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s227
-reset-handler	reset-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s159
-reset-maximum-memory-bytes!	(reset-maximum-memory-bytes!)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s208
+rename-file	(rename-file old-pathname new-pathname)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s146
+require-nongenerative-clause	require-nongenerative-clause	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s142
+reset	(reset)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s181
+reset-cost-center!	(reset-cost-center! cost-center)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s250
+reset-handler	reset-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s182
+reset-maximum-memory-bytes!	(reset-maximum-memory-bytes!)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s231
 reverse!	(reverse! list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s12
-revisit	(revisit path)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s53
-run-cp0	run-cp0	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s113
+revisit	(revisit path)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s61
+revisit-compiled-from-port	(revisit-compiled-from-port input-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s58
+run-cp0	run-cp0	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s123
 s8-list->bytevector	(s8-list->bytevector list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s61
-sc-expand	(sc-expand obj)~(sc-expand obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s87
+sc-expand	(sc-expand obj)~(sc-expand obj env)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s95
 scheme	scheme	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s28
 scheme-environment	(scheme-environment)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s31
-scheme-program	scheme-program	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s169
-scheme-script	scheme-script	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s165
-scheme-start	scheme-start	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s164
-scheme-version	(scheme-version)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s234
-scheme-version-number	(scheme-version-number)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s235
-set-binary-port-input-buffer!	(set-binary-port-input-buffer! binary-input-port bytevector)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-binary-port-input-index!	(set-binary-port-input-index! binary-input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-binary-port-input-size!	(set-binary-port-input-size! binary-input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-binary-port-output-buffer!	(set-binary-port-output-buffer! binary-output-port bytevector)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-binary-port-output-index!	(set-binary-port-output-index! output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-binary-port-output-size!	(set-binary-port-output-size! output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-box!	(set-box! box obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s82
-set-port-bol!	(set-port-bol! output-port obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s24
-set-port-eof!	(set-port-eof! input-port obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s26
-set-port-input-buffer!	(set-port-input-buffer! input-port x)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-port-input-index!	(set-port-input-index! input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-port-input-size!	(set-port-input-size! input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-port-length!	(set-port-length! port len)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s30
-set-port-name!	(set-port-name! port obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s28
-set-port-nonblocking!	(set-port-nonblocking! port obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s32
-set-port-output-buffer!	(set-port-output-buffer! output-port x)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-port-output-index!	(set-port-output-index! output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-port-output-size!	(set-port-output-size! output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-sstats-bytes!	(set-sstats-bytes! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s214
-set-sstats-cpu!	(set-sstats-cpu! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s214
-set-sstats-gc-bytes!	(set-sstats-gc-bytes! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s214
-set-sstats-gc-count!	(set-sstats-gc-count! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s214
-set-sstats-gc-cpu!	(set-sstats-gc-cpu! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s214
-set-sstats-gc-real!	(set-sstats-gc-real! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s214
-set-sstats-real!	(set-sstats-real! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s214
-set-textual-port-input-buffer!	(set-textual-port-input-buffer! textual-input-port string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-textual-port-input-index!	(set-textual-port-input-index! textual-input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-textual-port-input-size!	(set-textual-port-input-size! textual-input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s15
-set-textual-port-output-buffer!	(set-textual-port-output-buffer! textual-output-port string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-textual-port-output-index!	(set-textual-port-output-index! textual-output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-textual-port-output-size!	(set-textual-port-output-size! textual-output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s19
-set-time-nanosecond!	(set-time-nanosecond! time nsec)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s186
-set-time-second!	(set-time-second! time sec)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s186
-set-time-type!	(set-time-type! time type)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s186
+scheme-program	scheme-program	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s192
+scheme-script	scheme-script	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s188
+scheme-start	scheme-start	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s187
+scheme-version	(scheme-version)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s257
+scheme-version-number	(scheme-version-number)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s258
+set-binary-port-input-buffer!	(set-binary-port-input-buffer! binary-input-port bytevector)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-binary-port-input-index!	(set-binary-port-input-index! binary-input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-binary-port-input-size!	(set-binary-port-input-size! binary-input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-binary-port-output-buffer!	(set-binary-port-output-buffer! binary-output-port bytevector)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-binary-port-output-index!	(set-binary-port-output-index! output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-binary-port-output-size!	(set-binary-port-output-size! output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-box!	(set-box! box obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s84
+set-port-bol!	(set-port-bol! output-port obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s26
+set-port-eof!	(set-port-eof! input-port obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s28
+set-port-input-buffer!	(set-port-input-buffer! input-port x)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-port-input-index!	(set-port-input-index! input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-port-input-size!	(set-port-input-size! input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-port-length!	(set-port-length! port len)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s32
+set-port-name!	(set-port-name! port obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s30
+set-port-nonblocking!	(set-port-nonblocking! port obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s34
+set-port-output-buffer!	(set-port-output-buffer! output-port x)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-port-output-index!	(set-port-output-index! output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-port-output-size!	(set-port-output-size! output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-sstats-bytes!	(set-sstats-bytes! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s237
+set-sstats-cpu!	(set-sstats-cpu! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s237
+set-sstats-gc-bytes!	(set-sstats-gc-bytes! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s237
+set-sstats-gc-count!	(set-sstats-gc-count! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s237
+set-sstats-gc-cpu!	(set-sstats-gc-cpu! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s237
+set-sstats-gc-real!	(set-sstats-gc-real! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s237
+set-sstats-real!	(set-sstats-real! s new-value)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s237
+set-textual-port-input-buffer!	(set-textual-port-input-buffer! textual-input-port string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-textual-port-input-index!	(set-textual-port-input-index! textual-input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-textual-port-input-size!	(set-textual-port-input-size! textual-input-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s17
+set-textual-port-output-buffer!	(set-textual-port-output-buffer! textual-output-port string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-textual-port-output-index!	(set-textual-port-output-index! textual-output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-textual-port-output-size!	(set-textual-port-output-size! textual-output-port n)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s21
+set-time-nanosecond!	(set-time-nanosecond! time nsec)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s209
+set-time-second!	(set-time-second! time sec)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s209
+set-time-type!	(set-time-type! time type)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s209
 set-timer	(set-timer n)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s22
 set-top-level-value!	(set-top-level-value! symbol obj)~(set-top-level-value! symbol obj env)	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s26
-set-virtual-register!	(set-virtual-register! k x)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s232
+set-virtual-register!	(set-virtual-register! k x)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s255
 sinh	(sinh num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s76
-sleep	(sleep time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s198
-sort	(sort predicate list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s111
-sort!	(sort! predicate list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s111
+sleep	(sleep time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s221
+sort	(sort predicate list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s113
+sort!	(sort! predicate list)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s113
 source-condition-form	(source-condition-form condition)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s5
 source-condition?	(source-condition? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s5
-source-directories	source-directories	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s94
+source-directories	source-directories	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s102
 source-file-descriptor	(source-file-descriptor path checksum)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s67
 source-file-descriptor-checksum	(source-file-descriptor-checksum sfd)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s65
 source-file-descriptor-path	(source-file-descriptor-path sfd)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s66
@@ -730,22 +740,30 @@ source-object-efp	(source-object-efp source-object)	https://cisco.github.io/Che
 source-object-line	(source-object-line source-object)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s60
 source-object-sfd	(source-object-sfd source-object)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s57
 source-object?	(source-object? obj)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s56
-sstats-bytes	(sstats-bytes s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s213
-sstats-cpu	(sstats-cpu s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s213
-sstats-difference	(sstats-difference s1 s2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s215
-sstats-gc-bytes	(sstats-gc-bytes s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s213
-sstats-gc-count	(sstats-gc-count s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s213
-sstats-gc-cpu	(sstats-gc-cpu s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s213
-sstats-gc-real	(sstats-gc-real s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s213
-sstats-print	(sstats-print s)~(sstats-print s textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s216
-sstats-real	(sstats-real s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s213
-sstats?	(sstats? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s212
-standard-error-port	(standard-error-port)~(standard-error-port b-mode)~(standard-error-port b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s74
-standard-input-port	(standard-input-port)~(standard-input-port b-mode)~(standard-input-port b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s55
-standard-output-port	(standard-output-port)~(standard-output-port b-mode)~(standard-output-port b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s73
-statistics	(statistics)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s210
+source-table-cell	(source-table-cell source-table source-object default)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s86
+source-table-contains?	(source-table-contains? source-table source-object)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s85
+source-table-delete!	(source-table-delete! source-table source-object)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s87
+source-table-dump	(source-table-dump source-table)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s156
+source-table-ref	(source-table-ref source-table source-object default)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s84
+source-table-set!	(source-table-set! source-table source-object obj)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s83
+source-table-size	(source-table-size source-table)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s88
+source-table?	(source-table? obj)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s82
+sstats-bytes	(sstats-bytes s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s236
+sstats-cpu	(sstats-cpu s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s236
+sstats-difference	(sstats-difference s1 s2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s238
+sstats-gc-bytes	(sstats-gc-bytes s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s236
+sstats-gc-count	(sstats-gc-count s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s236
+sstats-gc-cpu	(sstats-gc-cpu s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s236
+sstats-gc-real	(sstats-gc-real s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s236
+sstats-print	(sstats-print s)~(sstats-print s textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s239
+sstats-real	(sstats-real s)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s236
+sstats?	(sstats? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s235
+standard-error-port	(standard-error-port)~(standard-error-port b-mode)~(standard-error-port b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s82
+standard-input-port	(standard-input-port)~(standard-input-port b-mode)~(standard-input-port b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s61
+standard-output-port	(standard-output-port)~(standard-output-port b-mode)~(standard-output-port b-mode ?transcoder)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s81
+statistics	(statistics)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s233
 string->immutable-string	(string->immutable-string string)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s25
-string->multibyte	(string->multibyte code-page string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s84
+string->multibyte	(string->multibyte code-page string)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s92
 string->number	(string->number string)~(string->number string radix)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s78
 string-ci<=?	(string-ci<=? string1 string2 string3 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s20
 string-ci<?	(string-ci<? string1 string2 string3 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s20
@@ -759,9 +777,9 @@ string<?	(string<? string1 string2 string3 ...)	https://cisco.github.io/Chez
 string=?	(string=? string1 string2 string3 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s20
 string>=?	(string>=? string1 string2 string3 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s20
 string>?	(string>? string1 string2 string3 ...)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s20
-strip-fasl-file	(strip-fasl-file input-path output-path options)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s79
+strip-fasl-file	(strip-fasl-file input-path output-path options)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s87
 sub1	(sub1 num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s68
-subset-mode	subset-mode	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s243
+subset-mode	subset-mode	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s266
 subst	(subst new old tree)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s11
 subst!	(subst! new old tree)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s11
 substq	(substq new old tree)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s11
@@ -769,16 +787,16 @@ substq!	(substq! new old tree)	https://cisco.github.io/ChezScheme/csug9.5/obj
 substring-fill!	(substring-fill! string start end char)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s22
 substv	(substv new old tree)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s11
 substv!	(substv! new old tree)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s11
-subtract-duration	(subtract-duration time timed)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s189
-subtract-duration!	(subtract-duration! time timed)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s189
-suppress-greeting	suppress-greeting	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s177
-symbol-hashtable-cell	(symbol-hashtable-cell hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s136
-symbol-hashtable-contains?	(symbol-hashtable-contains? hashtable key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s134
-symbol-hashtable-delete!	(symbol-hashtable-delete! hashtable key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s137
-symbol-hashtable-ref	(symbol-hashtable-ref hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s133
-symbol-hashtable-set!	(symbol-hashtable-set! hashtable key value)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s132
-symbol-hashtable-update!	(symbol-hashtable-update! hashtable key procedure default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s135
-symbol-hashtable?	(symbol-hashtable? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s131
+subtract-duration	(subtract-duration time timed)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s212
+subtract-duration!	(subtract-duration! time timed)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s212
+suppress-greeting	suppress-greeting	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s200
+symbol-hashtable-cell	(symbol-hashtable-cell hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s138
+symbol-hashtable-contains?	(symbol-hashtable-contains? hashtable key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s136
+symbol-hashtable-delete!	(symbol-hashtable-delete! hashtable key)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s139
+symbol-hashtable-ref	(symbol-hashtable-ref hashtable key default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s135
+symbol-hashtable-set!	(symbol-hashtable-set! hashtable key value)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s134
+symbol-hashtable-update!	(symbol-hashtable-update! hashtable key procedure default)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s137
+symbol-hashtable?	(symbol-hashtable? obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s133
 syntax->annotation	(syntax->annotation obj)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s69
 syntax->list	(syntax->list syntax-object)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s6
 syntax->vector	(syntax->vector syntax-object)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s7
@@ -787,30 +805,30 @@ syntax-object->datum	(syntax-object->datum obj)	https://cisco.github.io/ChezSch
 syntax-rules	(syntax-rules (literal ...) clause ...)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s4
 system	(system command)	https://cisco.github.io/ChezScheme/csug9.5/foreign.html#./foreign:s4
 tanh	(tanh num)	https://cisco.github.io/ChezScheme/csug9.5/numeric.html#./numeric:s76
-textual-port-input-buffer	(textual-port-input-buffer textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-textual-port-input-count	(textual-port-input-count textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
-textual-port-input-index	(textual-port-input-index textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-textual-port-input-size	(textual-port-input-size textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s14
-textual-port-output-buffer	(textual-port-output-buffer output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-textual-port-output-count	(textual-port-output-count textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
-textual-port-output-index	(textual-port-output-index output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-textual-port-output-size	(textual-port-output-size output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
-thread-condition?	(thread-condition? obj)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s12
+textual-port-input-buffer	(textual-port-input-buffer textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+textual-port-input-count	(textual-port-input-count textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s18
+textual-port-input-index	(textual-port-input-index textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+textual-port-input-size	(textual-port-input-size textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s16
+textual-port-output-buffer	(textual-port-output-buffer output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+textual-port-output-count	(textual-port-output-count textual-output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s22
+textual-port-output-index	(textual-port-output-index output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+textual-port-output-size	(textual-port-output-size output-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s20
+thread-condition?	(thread-condition? obj)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s13
 thread?	(thread? obj)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s3
-threaded?	(threaded?)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s237
-time	(time expr)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s199
-time-difference	(time-difference time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s189
-time-difference!	(time-difference! time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s189
-time-nanosecond	(time-nanosecond time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s185
-time-second	(time-second time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s185
-time-type	(time-type time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s185
-time-utc->date	(time-utc->date time)~(time-utc->date time offset)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s196
-time<=?	(time<=? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s187
-time<?	(time<? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s187
-time=?	(time=? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s187
-time>=?	(time>=? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s187
-time>?	(time>? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s187
-time?	(time? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s184
+threaded?	(threaded?)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s260
+time	(time expr)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s222
+time-difference	(time-difference time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s212
+time-difference!	(time-difference! time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s212
+time-nanosecond	(time-nanosecond time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s208
+time-second	(time-second time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s208
+time-type	(time-type time)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s208
+time-utc->date	(time-utc->date time)~(time-utc->date time offset)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s219
+time<=?	(time<=? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s210
+time<?	(time<? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s210
+time=?	(time=? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s210
+time>=?	(time>=? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s210
+time>?	(time>? time1 time2)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s210
+time?	(time? obj)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s207
 timer-interrupt-handler	timer-interrupt-handler	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s24
 top-level-bound?	(top-level-bound? symbol)~(top-level-bound? symbol env)	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s30
 top-level-mutable?	(top-level-mutable? symbol)~(top-level-mutable? symbol env)	https://cisco.github.io/ChezScheme/csug9.5/binding.html#./binding:s31
@@ -827,45 +845,49 @@ trace-lambda	(trace-lambda name formals body1 body2 ...)	https://cisco.gith
 trace-let	(trace-let name ((var expr) ...) body1 body2 ...)	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s5
 trace-output-port	trace-output-port	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s11
 trace-print	trace-print	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s12
-transcoder?	(transcoder? obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s10
-transcript-cafe	(transcript-cafe path)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s181
-transcript-off	(transcript-off)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s180
-transcript-on	(transcript-on path)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s179
-truncate-file	(truncate-file output-port)~(truncate-file output-port pos)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s79
-truncate-port	(truncate-port output-port)~(truncate-port output-port pos)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s79
-type-descriptor	(type-descriptor name)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s177
-unbox	(unbox box)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s81
-undefined-variable-warnings	undefined-variable-warnings	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s116
-unget-char	(unget-char textual-input-port char)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s59
-unget-u8	(unget-u8 binary-input-port octet)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s60
-unlock-object	(unlock-object obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s33
-unread-char	(unread-char char)~(unread-char char textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s59
+transcoder?	(transcoder? obj)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s12
+transcript-cafe	(transcript-cafe path)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s204
+transcript-off	(transcript-off)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s203
+transcript-on	(transcript-on path)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s202
+truncate-file	(truncate-file output-port)~(truncate-file output-port pos)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s87
+truncate-port	(truncate-port output-port)~(truncate-port output-port pos)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s87
+type-descriptor	(type-descriptor name)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s179
+unbox	(unbox box)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s83
+undefined-variable-warnings	undefined-variable-warnings	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s126
+unget-char	(unget-char textual-input-port char)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s65
+unget-u8	(unget-u8 binary-input-port octet)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s66
+unlock-object	(unlock-object obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s38
+unread-char	(unread-char char)~(unread-char char textual-input-port)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s65
+unregister-guardian	(unregister-guardian guardian)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s32
 untrace	(untrace var1 var2 ...)~(untrace)	https://cisco.github.io/ChezScheme/csug9.5/debug.html#./debug:s10
-utf-16-codec	(utf-16-codec)~(utf-16-codec endianness)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s7
-utf-16be-codec	(utf-16be-codec)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s7
-utf-16le-codec	(utf-16le-codec)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s7
+utf-16-codec	(utf-16-codec)~(utf-16-codec endianness)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s9
+utf-16be-codec	(utf-16be-codec)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s9
+utf-16le-codec	(utf-16le-codec)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s9
 vector->immutable-vector	(vector->immutable-vector vector)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s35
 vector-cas!	(vector-cas! vector n old-obj new-obj)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s33
 vector-copy	(vector-copy vector)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s31
 vector-set-fixnum!	(vector-set-fixnum! vector n fixnum)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s32
-virtual-register	(virtual-register k)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s233
-virtual-register-count	(virtual-register-count)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s231
-visit	(visit path)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s51
-void	(void)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s110
-waiter-prompt-and-read	waiter-prompt-and-read	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s155
-waiter-prompt-string	waiter-prompt-string	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s154
-waiter-write	waiter-write	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s157
+verify-loadability	(verify-loadability situation input ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s50
+virtual-register	(virtual-register k)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s256
+virtual-register-count	(virtual-register-count)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s254
+visit	(visit path)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s59
+visit-compiled-from-port	(visit-compiled-from-port input-port)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s57
+void	(void)	https://cisco.github.io/ChezScheme/csug9.5/objects.html#./objects:s112
+waiter-prompt-and-read	waiter-prompt-and-read	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s178
+waiter-prompt-string	waiter-prompt-string	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s177
+waiter-write	waiter-write	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s180
 warning	(warning who msg irritant ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s1
 warningf	(warningf who msg irritant ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s2
 weak-cons	(weak-cons obj1 obj2)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s24
 weak-pair?	(weak-pair? obj)	https://cisco.github.io/ChezScheme/csug9.5/smgmt.html#./smgmt:s25
 with	(with ((pat expr) ...) template)	https://cisco.github.io/ChezScheme/csug9.5/compat.html#./compat:s20
-with-cost-center	(with-cost-center cost-center thunk)~(with-cost-center timed? cost-center thunk)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s223
+with-cost-center	(with-cost-center cost-center thunk)~(with-cost-center timed? cost-center thunk)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s246
 with-implicit	(with-implicit (id0 id1 ...) body1 body2 ...)	https://cisco.github.io/ChezScheme/csug9.5/syntax.html#./syntax:s11
-with-input-from-file	(with-input-from-file path thunk)~(with-input-from-file path thunk options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s53
-with-input-from-string	(with-input-from-string string thunk)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s40
+with-input-from-file	(with-input-from-file path thunk)~(with-input-from-file path thunk options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s59
+with-input-from-string	(with-input-from-string string thunk)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s46
 with-interrupts-disabled	(with-interrupts-disabled body1 body2 ...)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s27
 with-mutex	(with-mutex mutex body1 body2 ...)	https://cisco.github.io/ChezScheme/csug9.5/threads.html#./threads:s10
-with-output-to-file	(with-output-to-file path thunk)~(with-output-to-file path thunk options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s71
-with-output-to-string	(with-output-to-string thunk)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s44
-with-source-path	(with-source-path who name procedure)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s95
+with-output-to-file	(with-output-to-file path thunk)~(with-output-to-file path thunk options)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s79
+with-output-to-string	(with-output-to-string thunk)	https://cisco.github.io/ChezScheme/csug9.5/io.html#./io:s50
+with-profile-tracker	(with-profile-tracker thunk)~(with-profile-tracker preserve-existing? thunk)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s153
+with-source-path	(with-source-path who name procedure)	https://cisco.github.io/ChezScheme/csug9.5/system.html#./system:s103
