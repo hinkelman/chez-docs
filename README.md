@@ -58,7 +58,7 @@ The `^` indicates that only search strings found at the start of the procedure s
 ("file-access-time" "file-buffer-size" "file-change-time")
 
 > (find-proc "let" 5)
-("delete-directory" "delete-file" "let*" "let*-values" "let-syntax")
+("delete-directory" "delete-file" "eq-hashtable-delete!" "fluid-let" "fluid-let-syntax")
 > (find-proc "^let")
 ("let*" "let*-values" "let-syntax" "let-values" "letrec" "letrec*" "letrec-syntax")
 ```
