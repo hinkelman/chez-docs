@@ -125,20 +125,30 @@
       (map cdr (list-head ls max-n))))
 
   (define (string-match s t)
-    (define (loop s-list t-sub)
-      (cond [(null? s-list) #t]
-            [(< (length t-sub) (length s-list)) #f]
-            [(char=? (car s-list) (car t-sub))
-             (loop (cdr s-list) (cdr t-sub))]
-            [else #f]))
-    (let* ([s-list-temp (string->list s)]
-           [starts-with? (char=? (car s-list-temp) #\^)]
-           [s-list (if starts-with? (cdr s-list-temp) s-list-temp)]
+    (let* ([s-list (string->list s)]
            [t-list (string->list t)])
-      (cond [(and starts-with? (not (char=? (car s-list) (car t-list)))) #f]
-            [(not (for-all (lambda (x) (member x t-list)) s-list)) #f]  
-            [else (loop s-list (member (car s-list) t-list))])))
+      (if (char=? (car s-list) #\^)
+          (string-match-helper (cdr s-list) t-list)
+          (not (for-all (lambda (x) (equal? x #f))
+                        (map (lambda (t-sub) (string-match-helper s-list t-sub))
+                             (potential-matches (car s-list) t-list)))))))
 
+  (define (string-match-helper s-list t-list)
+    (cond [(not t-list) #f] 
+          [(null? s-list) #t]
+          [(< (length t-list) (length s-list)) #f]
+          [(char=? (car s-list) (car t-list))
+           (string-match-helper (cdr s-list) (cdr t-list))]
+          [else #f]))
+  
+  (define (potential-matches char t-list)
+    (define (loop t-list results)
+      (cond [(null? t-list)
+             (remove-duplicates (reverse results))]
+            [else
+             (loop (cdr t-list) (cons (member char t-list) results))]))
+    (loop t-list '()))
+  
   ;; https://blogs.mathworks.com/cleve/2017/08/14/levenshtein-edit-distance-between-strings/
   (define (lev s t)
     (let* ([s (list->vector (string->list s))]

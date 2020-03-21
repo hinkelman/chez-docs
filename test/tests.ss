@@ -11,6 +11,7 @@
 (test-end "fuzzy-test")
 
 (test-begin "partial-match-test")
+(test-equal '("list-sort" "sort" "sort!" "vector-sort" "vector-sort!") (find-proc "sort"))
 (test-equal '("hash-table?") (find-proc "hash-table?" 3))
 (test-equal '("list-head" "lookahead-char" "lookahead-u8" "make-boot-header") (find-proc "head" 5))
 (test-equal '("append" "append!" "string-append") (find-proc "append"))
