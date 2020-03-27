@@ -1,3 +1,5 @@
+![](https://github.com/hinkelman/chez-stats/workflows/Master/badge.svg)
+
 # Chez Scheme Documentation Library
 
 Access Chez Scheme documentation from the REPL. 
@@ -17,7 +19,7 @@ For more information on installing Chez Scheme libraries, see blog posts for [ma
 
 ### Import 
 
-Import `chez-docs` procedure: `(import (chez-docs docs))`
+Import `chez-docs` procedures: `(import (chez-docs docs))`
 
 ### Basic Usage
 
