@@ -1,6 +1,6 @@
-![](https://github.com/hinkelman/chez-stats/workflows/Master/badge.svg)
-
 # Chez Scheme Documentation Library
+
+![](https://github.com/hinkelman/chez-stats/workflows/Master/badge.svg)
 
 Access Chez Scheme documentation from the REPL. 
 
