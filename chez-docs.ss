@@ -1,4 +1,4 @@
-(library (chez-docs docs)
+(library (chez-docs)
   (export doc
           find-proc
           launch-csug-summary)
@@ -8,7 +8,7 @@
   ;; load data --------------------------------------------------
 
   (define data-paths
-    (map (lambda (x) (string-append x "/chez-docs/data.scm"))
+    (map (lambda (x) (string-append x "/chez-docs-data.scm"))
          (map car (library-directories))))
   
   (define data
@@ -29,56 +29,63 @@
           [else
            (cons (car ls) (remove-duplicates (cdr ls)))]))
 
+  ;; extract unique list of "procedures" from data
   (define proc-list
     (sort string<?
           (remove-duplicates
            (append
-            (map car (cadar data))     ;; csug procs
-            (map car (cadadr data)))))) ;; tspl procs
+            (map car (cdr (assoc 'csug data)))      
+            (map car (cdr (assoc 'tspl data))))))) 
 
   ;; launch documentation -----------------------------------------
 
   (define doc
     (case-lambda
-      [(proc) (doc-helper proc "both" #t)]
-      [(proc source) (doc-helper proc source #t)]
-      [(proc source launch?) (doc-helper proc source launch?)]))
+      [(proc) (doc-helper proc 'open-link 'both)]
+      [(proc action) (doc-helper proc action 'both)]
+      [(proc action source) (doc-helper proc action source)]))
 
-  (define (doc-helper proc source launch?)
-    (define (loop ls)
+  (define (doc-helper proc action source)
+    (unless (or (symbol=? action 'open-link)
+                (symbol=? action 'display-form))
+      (assertion-violation "(doc proc action)" "action not one of 'open-link or 'display-form"))
+    (let loop ([ls (data-lookup proc source)])
       (cond [(null? ls) (void)]
             [else
-             (display-launch (car ls) launch?)
-             (loop (cdr ls))]))
-    (loop (data-lookup proc source)))
+             (display-form (car ls) action)
+             (loop (cdr ls))])))
 
-  (define (display-launch data-selected launch?)
+  (define (display-form data-selected action)
     (when data-selected
-      (display (replace-tilde (string-append (caadr data-selected) "\n")))
-      (when launch?
-        (system (string-append open-string (cadadr data-selected))))))
+      (display (replace-tilde (string-append (cadr data-selected) "\n")))
+      (when (symbol=? action 'open-link)
+        (system (string-append open-string (caddr data-selected))))))
 
   (define (data-lookup proc source)
-    (cond [(or (string=? source "CSUG") (string=? source "TSPL"))
-           (list (dl-helper proc source))]
-          [(string=? source "both")
-           (let ([csug (dl-helper proc "CSUG")]
-                 [tspl (dl-helper proc "TSPL")])
+    (cond [(or (symbol=? source 'csug) (symbol=? source 'tspl))
+           (let ([result (dl-helper proc source)])
+             (if result
+                 (list result) ; package in list to keep same structure as when 'both is selected
+                 (assertion-violation "(doc proc action source)"
+                                      (string-append proc " not found in " (symbol->string source)))))]
+          [(symbol=? source 'both)
+           (let ([csug (dl-helper proc 'csug)]
+                 [tspl (dl-helper proc 'tspl)])
              (if (or csug tspl)
                  (list csug tspl)
-                 (assertion-violation "(doc proc)" "proc not found")))]
+                 (assertion-violation "(doc proc)" (string-append proc " not found in csug or tspl"))))]
           [else
-           (assertion-violation "(doc proc source)" "source not one of CSUG, TSPL, both")]))
+           (assertion-violation "(doc proc action source)" "source not one of 'csug, 'tspl, 'both")]))
 
-  ;; data is imported above
+  ;; extract form and url for selected proc and source
   (define (dl-helper proc source)
-    (assoc proc (cadr (assoc source data)))) 
+    (assoc proc (cdr (assoc source data)))) 
 
   (define (replace-tilde str)
     (let* ([in (open-input-string str)]
-	   [str-list (string->list str)])
+           [str-list (string->list str)])
       (if (not (member #\~ str-list))
-  	  str  ;; return string unchanged b/c no tilde
+          str  ;; return string unchanged b/c no tilde
           (let loop ([c (read-char in)]
                      [result ""])
             (cond [(eof-object? c)
@@ -101,23 +108,26 @@
 
   (define find-proc
     (case-lambda
-      [(search-string) (find-proc-helper search-string 10 #f)]
-      [(search-string max-results) (find-proc-helper search-string max-results #f)]
-      [(search-string max-results fuzzy?) (find-proc-helper search-string max-results fuzzy?)]))
+      [(search-string) (find-proc-helper search-string 'exact 10)]
+      [(search-string search-type) (find-proc-helper search-string search-type 10)]
+      [(search-string search-type max-results) (find-proc-helper search-string search-type max-results)]))
 
-  (define (find-proc-helper search-string max-results fuzzy?)
+  (define (find-proc-helper search-string search-type max-results)
     (unless (string? search-string)
       (assertion-violation "(find-proc search-string)" "search-string is not a string"))
-    (cond [fuzzy?
+    (cond [(symbol=? search-type 'fuzzy)
            (let* ([dist-list (map (lambda (x) (lev search-string x)) proc-list)]
                   [dist-proc (map (lambda (dist proc) (cons dist proc)) dist-list proc-list)]
                   [dist-proc-sort (sort (lambda (x y) (< (car x) (car y))) dist-proc)])
              (prepare-results dist-proc-sort max-results))]
-          [else
+          [(symbol=? search-type 'exact)
            (let* ([bool-list (map (lambda (x) (string-match search-string x)) proc-list)]
                   [bool-proc (map (lambda (bool proc) (cons bool proc)) bool-list proc-list)]
                   [bool-proc-filter (filter (lambda (x) (car x)) bool-proc)])
-             (prepare-results bool-proc-filter max-results))]))
+             (prepare-results bool-proc-filter max-results))]
+          [else
+           (assertion-violation "(find-proc search-string search-type)"
+                                "search-type must be either 'exact or 'fuzzy")]))
 
   (define (prepare-results ls max-results)
     (let* ([len (length ls)]
@@ -141,13 +151,20 @@
            (string-match-helper (cdr s-list) (cdr t-list))]
           [else #f]))
   
+  ;; (define (potential-matches char t-list)
+  ;;   (define (loop t-list results)
+  ;;     (cond [(null? t-list)
+  ;;            (remove-duplicates (reverse results))]
+  ;;           [else
+  ;;            (loop (cdr t-list) (cons (member char t-list) results))]))
+  ;;   (loop t-list '()))
+
   (define (potential-matches char t-list)
-    (define (loop t-list results)
-      (cond [(null? t-list)
-             (remove-duplicates (reverse results))]
-            [else
-             (loop (cdr t-list) (cons (member char t-list) results))]))
-    (loop t-list '()))
+    (let loop ([t-list t-list]
+               [results '()])
+      (if (null? t-list)
+          (remove-duplicates (reverse results))
+          (loop (cdr t-list) (cons (member char t-list) results)))))
   
   ;; https://blogs.mathworks.com/cleve/2017/08/14/levenshtein-edit-distance-between-strings/
   (define (lev s t)
