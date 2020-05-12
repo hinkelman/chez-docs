@@ -8,7 +8,7 @@ Related blog posts:
 
 ### Approach
 
-`chez-docs` uses a call to `system` to open documentation in your default browser. The R code used to scrape the Chez Scheme User's Guide for use in chez-docs is in a [separate repository](https://github.com/hinkelman/chez-docs-scrape). 
+`chez-docs` uses a call to `system` to open documentation in your default browser. The R code used to scrape the Chez Scheme User's Guide for use in `chez-docs` is in a [separate repository](https://github.com/hinkelman/chez-docs-scrape). 
 
 ### Installation
 
