@@ -52,10 +52,10 @@
     (let loop ([ls (data-lookup proc source)])
       (cond [(null? ls) (void)]
             [else
-             (display-form (car ls) action)
+             (display-form-open (car ls) action)
              (loop (cdr ls))])))
 
-  (define (display-form data-selected action)
+  (define (display-form-open data-selected action)
     (when data-selected
       (display (replace-tilde (string-append (cadr data-selected) "\n")))
       (when (symbol=? action 'open-link)
@@ -65,7 +65,7 @@
     (cond [(or (symbol=? source 'csug) (symbol=? source 'tspl))
            (let ([result (dl-helper proc source)])
              (if result
-                 (list result) ; package in list to keep same structure as when 'both is selected
+                 (list result)
                  (assertion-violation "(doc proc action source)"
                                       (string-append proc " not found in " (symbol->string source)))))]
           [(symbol=? source 'both)
@@ -150,14 +150,6 @@
           [(char=? (car s-list) (car t-list))
            (string-match-helper (cdr s-list) (cdr t-list))]
           [else #f]))
-  
-  ;; (define (potential-matches char t-list)
-  ;;   (define (loop t-list results)
-  ;;     (cond [(null? t-list)
-  ;;            (remove-duplicates (reverse results))]
-  ;;           [else
-  ;;            (loop (cdr t-list) (cons (member char t-list) results))]))
-  ;;   (loop t-list '()))
 
   (define (potential-matches char t-list)
     (let loop ([t-list t-list]
@@ -189,5 +181,4 @@
           (set! y tmp)))
       (vector-ref x n)))
   )
-
 
