@@ -7,9 +7,12 @@
 
   ;; load data --------------------------------------------------
 
+  ;; cons'ing "." onto library-directories was added
+  ;; after realizing that I couldn't run tests from within .akku/env 
+  ;; I'm assuming that installing chez-docs from akku would make this step unnecessary
   (define data-paths
     (map (lambda (x) (string-append x "/chez-docs-data.scm"))
-         (map car (library-directories))))
+         (cons "." (map car (library-directories)))))
   
   (define data
     (let ([tmp '()])
@@ -18,7 +21,9 @@
          (when (file-exists? path)
            (set! tmp (with-input-from-file path read))))
        data-paths)
-      tmp))
+      (if (null? tmp)
+          (assertion-violation "loading data" "chez-docs-data.scm not found")
+          tmp)))
 
   ;; https://stackoverflow.com/questions/8382296/scheme-remove-duplicated-numbers-from-list
   (define (remove-duplicates ls)
