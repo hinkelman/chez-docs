@@ -7,4 +7,5 @@
 .#*.scm
 
 .DS_Store
-R/.Rhistory
+
+.akku

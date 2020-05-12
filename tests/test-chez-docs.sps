@@ -1,6 +1,12 @@
-;; import lines will change after I adopt akku's project-based workflow
-(import (chez-docs)
-	(srfi s64 testing))
+#!/usr/bin/env scheme-script
+;; -*- mode: scheme; coding: utf-8 -*- !#
+;; Copyright (c) 2020 Travis Hinkelman
+;; SPDX-License-Identifier: MIT
+#!r6rs
+
+(import (rnrs (6))
+        (srfi :64 testing)
+        (chez-docs))
 
 (test-begin "fuzzy-test")
 (test-equal '("append" "append!" "and" "apply" "cond") (find-proc "append" 'fuzzy 5))
@@ -25,5 +31,3 @@
 (test-end "starts-with-test")
 
 (exit (if (zero? (test-runner-fail-count (test-runner-get))) 0 1))
-
-
