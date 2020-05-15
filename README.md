@@ -12,7 +12,7 @@ Related blog posts:
 
 ### Installation
 
-Download or clone this repository. Move `chez-docs.ss` and `chez-docs-data.scm` to a directory found by `(library-directories)`. `chez-docs` is unlikely to be a dependency for any project and is most useful if it is globablly installed. For more information on how Chez Scheme finds libraries, see blog posts for [macOS and Windows](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs/) or [Ubuntu](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs-ubuntu/).
+Download or clone this repository. Move `chez-docs.sls` and `chez-docs-data.scm` to a directory found by `(library-directories)`. `chez-docs` is unlikely to be a dependency for any project and is most useful if it is globablly installed. For more information on how Chez Scheme finds libraries, see blog posts for [macOS and Windows](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs/) or [Ubuntu](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs-ubuntu/).
 
 ### Import 
 
