@@ -6,19 +6,29 @@ Related blog posts:
 [Access Chez Scheme documentation from the REPL](https://www.travishinkelman.com/post/access-chez-scheme-documentation-from-repl/)  
 [Adding string matching to chez-docs](https://www.travishinkelman.com/post/adding-string-matching-to-chez-docs/)
 
-### Approach
+## Approach
 
 `chez-docs` uses a call to `system` to open documentation in your default browser. The R code used to scrape the Chez Scheme User's Guide for use in `chez-docs` is in a [separate repository](https://github.com/hinkelman/chez-docs-scrape). 
 
-### Installation
+## Installation
 
-Download or clone this repository. Move `chez-docs.sls` and `chez-docs-data.scm` to a directory found by `(library-directories)`. `chez-docs` is unlikely to be a dependency for any project and is most useful if it is globablly installed. For more information on how Chez Scheme finds libraries, see blog posts for [macOS and Windows](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs/) or [Ubuntu](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs-ubuntu/).
+### Akku
 
-### Import 
+```
+$ akku install chez-docs
+```
+
+For more information on getting started with [Akku](https://akkuscm.org/), see this [blog post](https://www.travishinkelman.com/posts/getting-started-with-akku-package-manager-for-scheme/). Akku uses a project-based workflow. However, `chez-docs` is unlikely to be a dependency for any project and is most useful if it is globablly installed.
+
+### Manual
+
+Clone or download this repository. Move `chez-docs.sls` and `chez-docs-data.scm` to a directory found by `(library-directories)`. For more information on how Chez Scheme finds libraries, see blog posts for [macOS and Windows](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs/) or [Ubuntu](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs-ubuntu/).
+
+## Import 
 
 `(import (chez-docs))`
 
-### Basic Usage
+## Basic Usage
 
 The main procedure is `doc` with the form `(doc proc action source)`. The `action` and  `source` arguments are optional and default to `'open-link` and `'both`, respectively. The options for `source` are `'csug`, `'tspl`, and `'both` where CSUG and TSPL are acronyms for the [Chez Scheme User's Guide](https://cisco.github.io/ChezScheme/csug9.5/) and [The Scheme Programming Language](https://www.scheme.com/tspl4/), respectively. When `action` is `'open-link`, `doc` opens a link to the relevant section of either CSUG, TSPL, or both in your default browswer. `doc` makes a system call to `open` (macOS), `xdg-open` (Linux), or `start` (Windows) and requires an internet connection. When `action` is `'display-form`, `doc` simply displays the form(s) for the specified `proc`. Note, `proc` is shorthand for procedure, but not all of the items in `chez-docs` are procedures, e.g., `&assertion`.
 
