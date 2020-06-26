@@ -7,8 +7,8 @@
 
   ;; load and prep data --------------------------------------------------
   ;; https://gitlab.com/akkuscm/akku/-/issues/49#note_343046504
-  ;; Chez has include so didn't need macro in GitLab issue example
-  ;; include is much simpler than the hoops that I was jumping through previously
+  ;; Chez has `include` so didn't need macro in GitLab issue example
+  ;; `include` is much simpler than the hoops that I was jumping through previously
   (include "chez-docs-data.scm")
 
   ;; https://stackoverflow.com/questions/8382296/scheme-remove-duplicated-numbers-from-list
