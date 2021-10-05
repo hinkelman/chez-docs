@@ -110,19 +110,23 @@
            (let* ([dist-list (map (lambda (x) (lev search-string x)) proc-list)]
                   [dist-proc (map (lambda (dist proc) (cons dist proc)) dist-list proc-list)]
                   [dist-proc-sort (sort (lambda (x y) (< (car x) (car y))) dist-proc)])
-             (prepare-results dist-proc-sort max-results))]
+             (prepare-results dist-proc-sort search-type max-results))]
           [(symbol=? search-type 'exact)
            (let* ([bool-list (map (lambda (x) (string-match search-string x)) proc-list)]
                   [bool-proc (map (lambda (bool proc) (cons bool proc)) bool-list proc-list)]
                   [bool-proc-filter (filter (lambda (x) (car x)) bool-proc)])
-             (prepare-results bool-proc-filter max-results))]
+             (prepare-results bool-proc-filter search-type max-results))]
           [else
            (assertion-violation "(find-proc search-string search-type)"
                                 "search-type must be either 'exact or 'fuzzy")]))
 
-  (define (prepare-results ls max-results)
+  (define (prepare-results ls search-type max-results)
     (let* ([len (length ls)]
            [max-n (if (> max-results len) len max-results)])
+      (when (and (symbol=? search-type 'exact) (> len max-results))
+        (display (string-append "Returning " (number->string max-results)
+                                " of " (number->string len)
+                                " results\n")))
       (map cdr (list-head ls max-n))))
 
   (define (string-match s t)
