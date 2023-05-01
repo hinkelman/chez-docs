@@ -5,5 +5,5 @@
   (synopsis "Access Chez Scheme documentation from the REPL.")
   (authors "Travis Hinkelman")
   (license "MIT")
-  (depends ("chez-srfi" ">=0.0.0-akku <1.0.0"))
+  (depends ("chez-srfi" "^0.0.0-akku.209.552cd37"))
 )
