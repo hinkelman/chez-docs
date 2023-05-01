@@ -5,10 +5,11 @@
 
   (import (chezscheme))
 
-  ;; load and prep data --------------------------------------------------
+  ;; setup --------------------------------------------------
   ;; https://gitlab.com/akkuscm/akku/-/issues/49#note_343046504
   ;; Chez has `include` so didn't need macro in GitLab issue example
   ;; `include` is much simpler than the hoops that I was jumping through previously
+  (include "summary-data.scm")
   (include "chez-docs-data.scm")
 
   ;; https://stackoverflow.com/questions/8382296/scheme-remove-duplicated-numbers-from-list
@@ -19,14 +20,6 @@
            (remove-duplicates (cdr ls))]
           [else
            (cons (car ls) (remove-duplicates (cdr ls)))]))
-
-  ;; extract unique list of "procedures" from data
-  (define proc-list
-    (sort string<?
-          (remove-duplicates
-           (append
-            (map car (cdr (assoc 'csug data)))      
-            (map car (cdr (assoc 'tspl data))))))) 
 
   ;; launch documentation -----------------------------------------
 
@@ -39,7 +32,8 @@
   (define (doc-helper proc action source)
     (unless (or (symbol=? action 'open-link)
                 (symbol=? action 'display-form))
-      (assertion-violation "(doc proc action)" "action not one of 'open-link or 'display-form"))
+      (assertion-violation "(doc proc action)"
+                           "action not one of 'open-link or 'display-form"))
     (let loop ([ls (data-lookup proc source)])
       (cond [(null? ls) (void)]
             [else
@@ -64,9 +58,11 @@
                  [tspl (dl-helper proc 'tspl)])
              (if (or csug tspl)
                  (list csug tspl)
-                 (assertion-violation "(doc proc)" (string-append proc " not found in csug or tspl"))))]
+                 (assertion-violation "(doc proc)"
+                                      (string-append proc " not found in csug or tspl"))))]
           [else
-           (assertion-violation "(doc proc action source)" "source not one of 'csug, 'tspl, 'both")]))
+           (assertion-violation "(doc proc action source)"
+                                "source not one of 'csug, 'tspl, 'both")]))
 
   ;; extract form and url for selected proc and source
   (define (dl-helper proc source)
@@ -97,23 +93,39 @@
 
   ;; procedure search -----------------------------------------
 
+  ;; extract unique list of "procedures" from data
+  (define proc-list
+    (sort string<?
+          (remove-duplicates
+           (append
+            (map car (cdr (assoc 'CSUG summary-data)))      
+            (map car (cdr (assoc 'TSPL summary-data))))))) 
+
   (define find-proc
     (case-lambda
-      [(search-string) (find-proc-helper search-string 'exact 10)]
-      [(search-string search-type) (find-proc-helper search-string search-type 10)]
-      [(search-string search-type max-results) (find-proc-helper search-string search-type max-results)]))
+      [(search-string)
+       (find-proc-helper search-string 'exact 10)]
+      [(search-string search-type)
+       (find-proc-helper search-string search-type 10)]
+      [(search-string search-type max-results)
+       (find-proc-helper search-string search-type max-results)]))
 
   (define (find-proc-helper search-string search-type max-results)
     (unless (string? search-string)
       (assertion-violation "(find-proc search-string)" "search-string is not a string"))
     (cond [(symbol=? search-type 'fuzzy)
-           (let* ([dist-list (map (lambda (x) (lev search-string x)) proc-list)]
-                  [dist-proc (map (lambda (dist proc) (cons dist proc)) dist-list proc-list)]
-                  [dist-proc-sort (sort (lambda (x y) (< (car x) (car y))) dist-proc)])
+           (let* ([dist-list (map (lambda (x) (lev search-string x))
+                                  proc-list)]
+                  [dist-proc (map (lambda (dist proc) (cons dist proc))
+                                  dist-list proc-list)]
+                  [dist-proc-sort (sort (lambda (x y) (< (car x) (car y)))
+                                        dist-proc)])
              (prepare-results dist-proc-sort search-type max-results))]
           [(symbol=? search-type 'exact)
-           (let* ([bool-list (map (lambda (x) (string-match search-string x)) proc-list)]
-                  [bool-proc (map (lambda (bool proc) (cons bool proc)) bool-list proc-list)]
+           (let* ([bool-list (map (lambda (x) (string-match search-string x))
+                                  proc-list)]
+                  [bool-proc (map (lambda (bool proc) (cons bool proc))
+                                  bool-list proc-list)]
                   [bool-proc-filter (filter (lambda (x) (car x)) bool-proc)])
              (prepare-results bool-proc-filter search-type max-results))]
           [else
