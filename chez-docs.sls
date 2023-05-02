@@ -11,6 +11,7 @@
   ;; `include` is much simpler than the hoops that I was jumping through previously
   (include "summary-data.scm")
   (include "chez-docs-data.scm")
+  ;; many of these procedures use this data without it being explicitly passed
 
   ;; https://stackoverflow.com/questions/8382296/scheme-remove-duplicated-numbers-from-list
   (define (remove-duplicates ls)
@@ -21,69 +22,70 @@
           [else
            (cons (car ls) (remove-duplicates (cdr ls)))]))
 
-  ;; launch documentation -----------------------------------------
+  ;; show documentation -----------------------------------------
 
   (define doc
     (case-lambda
-      [(proc) (doc-helper proc 'open-link 'both)]
-      [(proc action) (doc-helper proc action 'both)]
-      [(proc action source) (doc-helper proc action source)]))
+      [(proc) (doc-helper proc #f 'both)]
+      [(proc open-link) (doc-helper proc open-link 'both)]
+      [(proc open-link source) (doc-helper proc open-link source)]))
 
-  (define (doc-helper proc action source)
-    (unless (or (symbol=? action 'open-link)
-                (symbol=? action 'display-form))
-      (assertion-violation "(doc proc action)"
-                           "action not one of 'open-link or 'display-form"))
-    (let loop ([ls (data-lookup proc source)])
-      (cond [(null? ls) (void)]
-            [else
-             (display-form-open (car ls) action)
-             (loop (cdr ls))])))
-
-  (define (display-form-open data-selected action)
-    (when data-selected
-      (display (replace-tilde (string-append (cadr data-selected) "\n")))
-      (when (symbol=? action 'open-link)
-        (system (string-append open-string (caddr data-selected))))))
-
-  (define (data-lookup proc source)
+  (define (doc-helper proc open-link source)
+    (unless (boolean? open-link)
+      (assertion-violation "(doc proc open-link)"
+                           "open-link must be boolean (#t or #f)"))
     (cond [(or (symbol=? source 'csug) (symbol=? source 'tspl))
-           (let ([result (dl-helper proc source)])
-             (if result
-                 (list result)
-                 (assertion-violation "(doc proc action source)"
-                                      (string-append proc " not found in " (symbol->string source)))))]
+           (let ([doc (get-doc proc source)])
+             (if doc
+                 (begin
+                   (for-each display doc)
+                   (when open-link (launch-doc-link proc source)))
+                 (assertion-violation "(doc proc open-link source)"
+                                      (string-append proc " not found in "
+                                                     (symbol->string source)))))]
           [(symbol=? source 'both)
-           (let ([csug (dl-helper proc 'csug)]
-                 [tspl (dl-helper proc 'tspl)])
+           (let ([csug (get-doc proc 'csug)]
+                 [tspl (get-doc proc 'tspl)])
              (if (or csug tspl)
-                 (list csug tspl)
+                 (begin 
+                   (when csug
+                     (begin
+                       (for-each display csug)
+                       (when open-link (launch-doc-link proc 'csug))))
+                   (when tspl
+                     (begin
+                       (for-each display tspl)
+                       (when open-link (launch-doc-link proc 'tspl)))))
                  (assertion-violation "(doc proc)"
                                       (string-append proc " not found in csug or tspl"))))]
           [else
-           (assertion-violation "(doc proc action source)"
+           (assertion-violation "(doc proc open-link source)"
                                 "source not one of 'csug, 'tspl, 'both")]))
 
-  ;; extract form and url for selected proc and source
-  (define (dl-helper proc source)
-    (assoc proc (cdr (assoc source data)))) 
+  (define (get-doc proc source)
+    (let* ([anchor (get-anchor proc source)]
+           [src-data (cdr (assoc source chez-docs-data))]
+           [doc (assoc anchor src-data)])
+      (if doc (cdr doc) doc)))
+  
+  (define (get-anchor proc source)
+    (let* ([src-data (cdr (assoc source summary-data))]
+           [row (assoc proc src-data)])
+      (if row (cadr row) row)))
 
-  (define (replace-tilde str)
-    (let* ([in (open-input-string str)]
-           [str-list (string->list str)])
-      (if (not (member #\~ str-list))
-          str  ;; return string unchanged b/c no tilde
-          (let loop ([c (read-char in)]
-                     [result ""])
-            (cond [(eof-object? c)
-                   result]
-                  [(char=? c #\~)
-                   (loop (read-char in) (string-append result "\n"))]
-                  [else
-                   (loop (read-char in) (string-append result (string c)))])))))
+  (define (get-url proc source)
+    (let* ([src-data (cdr (assoc source summary-data))]
+           [row (assoc proc src-data)])
+      (if row (caddr row) row)))
+
+  (define (launch-doc-link proc source)
+    (system (string-append open-string (get-url proc source))))
 
   (define (launch-csug-summary)
-    (system (string-append open-string "https://cisco.github.io/ChezScheme/csug9.5/summary.html#./summary:h0")))
+    (system
+     (string-append
+      open-string
+      "https://cisco.github.io/ChezScheme/csug9.5/summary.html#./summary:h0")))
 
   (define open-string
     (case (machine-type)
@@ -98,8 +100,8 @@
     (sort string<?
           (remove-duplicates
            (append
-            (map car (cdr (assoc 'CSUG summary-data)))      
-            (map car (cdr (assoc 'TSPL summary-data))))))) 
+            (map car (cdr (assoc 'csug summary-data)))      
+            (map car (cdr (assoc 'tspl summary-data))))))) 
 
   (define find-proc
     (case-lambda
