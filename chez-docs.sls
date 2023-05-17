@@ -26,41 +26,44 @@
 
   (define doc
     (case-lambda
-      [(proc) (doc-helper proc #f 'both)]
-      [(proc open-link) (doc-helper proc open-link 'both)]
-      [(proc open-link source) (doc-helper proc open-link source)]))
+      [(proc) (doc-helper proc 'display 'both)]
+      [(proc action) (doc-helper proc action 'both)]
+      [(proc action source) (doc-helper proc action source)]))
 
-  (define (doc-helper proc open-link source)
-    (unless (boolean? open-link)
-      (assertion-violation "(doc proc open-link)"
-                           "open-link must be boolean (#t or #f)"))
+  (define (doc-helper proc action source)
+    (unless (string? proc)
+      (assertion-violation "(doc proc)" "proc is not a string"))
+    (unless (member action '(display open both))
+      (assertion-violation "(doc proc action)"
+                           "action not one of 'display, 'open, 'both"))
     (cond [(or (symbol=? source 'csug) (symbol=? source 'tspl))
            (let ([doc (get-doc proc source)])
              (if doc
-                 (begin
-                   (for-each display doc)
-                   (when open-link (launch-doc-link proc source)))
-                 (assertion-violation "(doc proc open-link source)"
+                 (action-helper proc doc action source)
+                 (assertion-violation "(doc proc action source)"
                                       (string-append proc " not found in "
                                                      (symbol->string source)))))]
           [(symbol=? source 'both)
-           (let ([csug (get-doc proc 'csug)]
-                 [tspl (get-doc proc 'tspl)])
-             (if (or csug tspl)
+           (let ([doc-csug (get-doc proc 'csug)]
+                 [doc-tspl (get-doc proc 'tspl)])
+             (if (or doc-csug doc-tspl)
                  (begin 
-                   (when csug
-                     (begin
-                       (for-each display csug)
-                       (when open-link (launch-doc-link proc 'csug))))
-                   (when tspl
-                     (begin
-                       (for-each display tspl)
-                       (when open-link (launch-doc-link proc 'tspl)))))
+                   (when doc-csug (action-helper proc doc-csug action 'csug))
+                   (when doc-tspl (action-helper proc doc-tspl action 'tspl)))
                  (assertion-violation "(doc proc)"
                                       (string-append proc " not found in csug or tspl"))))]
           [else
-           (assertion-violation "(doc proc open-link source)"
+           (assertion-violation "(doc proc action source)"
                                 "source not one of 'csug, 'tspl, 'both")]))
+
+  (define (action-helper proc doc action source)
+    (let ([srclu '((csug "\nCHEZ SCHEME USER'S GUIDE\n\n")
+                   (tspl "\nTHE SCHEME PROGRAMMING LANGUAGE\n\n"))])
+      (when (not (symbol=? action 'open))
+        (display (cadr (assoc source srclu)))
+        (for-each display doc))
+      (when (not (symbol=? action 'display))
+        (launch-doc-link proc source))))
 
   (define (get-doc proc source)
     (let* ([anchor (get-anchor proc source)]
