@@ -41,8 +41,10 @@
              (if doc
                  (action-helper proc doc action source)
                  (assertion-violation "(doc proc action source)"
-                                      (string-append proc " not found in "
-                                                     (symbol->string source)))))]
+                                      (string-append
+                                       proc " not found in "
+                                       (symbol->string source) "\n"
+                                       (guess-proc proc)))))]
           [(symbol=? source 'both)
            (let ([doc-csug (get-doc proc 'csug)]
                  [doc-tspl (get-doc proc 'tspl)])
@@ -51,7 +53,9 @@
                    (when doc-csug (action-helper proc doc-csug action 'csug))
                    (when doc-tspl (action-helper proc doc-tspl action 'tspl)))
                  (assertion-violation "(doc proc)"
-                                      (string-append proc " not found in csug or tspl"))))]
+                                      (string-append
+                                       proc " not found in csug or tspl\n"
+                                       (guess-proc proc)))))]
           [else
            (assertion-violation "(doc proc action source)"
                                 "source not one of 'csug, 'tspl, 'both")]))
@@ -104,7 +108,10 @@
           (remove-duplicates
            (append
             (map car (cdr (assoc 'csug summary-data)))      
-            (map car (cdr (assoc 'tspl summary-data))))))) 
+            (map car (cdr (assoc 'tspl summary-data)))))))
+
+  (define (guess-proc proc)
+    (string-append "Did you mean '" (car (find-proc proc 'fuzzy)) "'?"))
 
   (define find-proc
     (case-lambda
