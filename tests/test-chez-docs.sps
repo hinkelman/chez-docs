@@ -20,7 +20,8 @@
 (test-equal '("list-sort" "sort" "sort!" "vector-sort" "vector-sort!") (find-proc "sort"))
 (test-equal '("hash-table?") (find-proc "hash-table?" 'exact 3))
 (test-equal '("list-head" "lookahead-char" "lookahead-u8" "make-boot-header") (find-proc "head" 'exact 5))
-(test-equal '("append" "append!" "string-append") (find-proc "append"))
+(test-equal '("append" "append!" "immutable-vector-append" "string-append"
+              "string-append-immutable" "vector-append") (find-proc "append"))
 (test-equal '("andmap" "hash-table-map" "map" "ormap" "vector-map") (find-proc "map"))
 (test-end "partial-match-test")
 
