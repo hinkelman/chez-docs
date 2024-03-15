@@ -92,7 +92,7 @@
     (system
      (string-append
       open-string
-      "https://cisco.github.io/ChezScheme/csug9.5/summary.html#./summary:h0")))
+      "https://cisco.github.io/ChezScheme/csug10.0/summary.html")))
 
   (define open-string
     (case (machine-type)
