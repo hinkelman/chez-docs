@@ -1,7 +1,7 @@
 #!r6rs ; -*- mode: scheme; coding: utf-8 -*-
 (import (akku format manifest))
 
-(akku-package ("chez-docs" "0.3.1")
+(akku-package ("chez-docs" "0.3.2")
   (synopsis "Access Chez Scheme documentation from the REPL.")
   (authors "Travis Hinkelman")
   (license "MIT")
