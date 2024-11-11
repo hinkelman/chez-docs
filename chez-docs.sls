@@ -86,19 +86,39 @@
       (if row (caddr row) row)))
 
   (define (launch-doc-link proc source)
-    (system (string-append open-string (get-url proc source))))
+    (launch-link
+     (get-url proc source)
+     "(doc proc action)"
+     "documentation"))
 
   (define (launch-csug-summary)
-    (system
-     (string-append
-      open-string
-      "https://cisco.github.io/ChezScheme/csug10.0/summary.html")))
+    (launch-link
+     "https://cisco.github.io/ChezScheme/csug10.0/summary.html"
+     "(launch-csug-summary)"
+     "CSUG summary"))
+
+  (define (launch-link url proc-string link-desc)
+    (if (not (string=? open-string "undefined"))
+	(system (string-append open-string url))
+	(assertion-violation
+	 proc-string
+	 (string-append
+	  "open command not defined for this machine type\n"
+	  link-desc " is at " url))))
 
   (define open-string
     (case (machine-type)
-      [(i3nt ti3nt a6nt ta6nt) "start "]     ; windows
-      [(i3osx ti3osx a6osx ta6osx) "open "]  ; mac
-      [else "xdg-open "]))                   ; linux
+      ;; windows
+      [(i3nt ti3nt a6nt ta6nt arm64nt tarm64nt)
+       "start "]   
+      ;; mac
+      [(i3osx ti3osx a6osx ta6osx arm64osx tarm64osx ppc32osx tppc32osx)
+       "open "]  
+      ;; linux
+      [(i3le ti3le a6le ta6le arm64le tarm64le arm32le tarm32le
+	     rv64le trv64le la64le tla64le ppc32le tppc32le)
+       "xdg-open "]                      
+      [else "undefined"]))                   
 
   ;; procedure search -----------------------------------------
 
