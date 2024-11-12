@@ -117,5 +117,4 @@ Under fuzzy matching, the `^` is included as part of the Levenshtein distance ca
 ("map" "max" "car" "exp" "memp")
 ```
 
-`chez-docs` also includes a procedure, `launch-csug-summary`, for opening the Chez Scheme User's Guide [Summary of Forms](https://cisco.github.io/ChezScheme/csug9.5/summary.html) page in your default browser. The procedure takes no arguments. 
-
+`chez-docs` also includes a procedure, `launch-csug-summary`, for opening the Chez Scheme User's Guide [Summary of Forms](https://cisco.github.io/ChezScheme/csug10.0/summary.html) page in your default browser. The procedure takes no arguments. 
