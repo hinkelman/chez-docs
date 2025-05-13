@@ -37,19 +37,19 @@ The main procedure is `doc` with the form `(doc proc action source)`. The `actio
 
 CHEZ SCHEME USER'S GUIDE
 
-procedure: (current-date) 
+procedure: (current-date)
 procedure: (current-date offset)
-returns: a date object representing the current date 
-libraries: (chezscheme)  
+returns: a date object representing the current date
+libraries: (chezscheme)
 
-offset represents the time-zone offset in seconds east of UTC, as described above. It must be an exact integer in the range -86400 to +86400, inclusive and defaults to the local time-zone offset. UTC may be obtained by passing an offset of zero. 
+offset represents the time-zone offset in seconds east of UTC, as described above. It must be an exact integer in the range -86400 to +86400, inclusive and defaults to the local time-zone offset. UTC may be obtained by passing an offset of zero.
 
-If offset is not provided, then the current time zone's offset is used, and date-dst? and date-zone-name report information about the time zone. If offset is provided, then date-dst? and date-zone-name on the resulting date object produce #f.  
+If offset is not provided, then the current time zone's offset is used, and date-dst? and date-zone-name report information about the time zone. If offset is provided, then date-dst? and date-zone-name on the resulting date object produce #f.
 
-The following examples assume the local time zone is EST. 
+The following examples assume the local time zone is EST.
 
 (current-date) => #<date Thu Dec 27 23:23:20 2007>
-(current-date 0) => #<date Fri Dec 28 04:23:20 2007> 
+(current-date 0) => #<date Fri Dec 28 04:23:20 2007>
 
 (date-zone-name (current-date)) => "EST" or other system-provided string
 (date-zone-name (current-date 0)) => #f
@@ -78,13 +78,26 @@ When called with no arguments, + returns 0.
 
 ```
 > (find-proc "append")
-("append" "append!" "string-append")
+("append" "append!" "immutable-vector-append"
+  "string-append" "string-append-immutable" "vector-append")
+
 > (find-proc "append" 'fuzzy 5)
 ("append" "append!" "and" "apply" "cond")
+
 > (find-proc "hashtable" 'exact 5)
-("eq-hashtable-cell" "eq-hashtable-contains?" "eq-hashtable-delete!" "eq-hashtable-ephemeron?" "eq-hashtable-ref")
+Returning 5 of 48 results
+("eq-hashtable-cell"
+  "eq-hashtable-contains?"
+  "eq-hashtable-delete!"
+  "eq-hashtable-ephemeron?"
+  "eq-hashtable-ref")
+
 > (find-proc "hashtable" 'fuzzy 5)
-("hashtable?" "hash-table?" "mutable" "eq-hashtable?" "hashtable-ref")
+("hashtable?"
+  "hash-table?"
+  "mutable"
+  "eq-hashtable?"
+  "hashtable-ref")
 ```
 
 When `search-type` is `'exact`, the search string is compared to all possible strings and strings that match the search string are returned. When `search-type` is `'fuzzy`, the Levenshtein distance is calculated for every available string and the results are sorted in ascending order by distance. Thus, an exact match shows up at the beginning of the list.
@@ -98,14 +111,26 @@ The `^` indicates that only search strings found at the start of the procedure s
 ("map")
 
 > (find-proc "file" 'exact 3)
-("&i/o-file-already-exists" "&i/o-file-does-not-exist" "&i/o-file-is-read-only")
+Returning 3 of 78 results
+("&i/o-file-already-exists"
+  "&i/o-file-does-not-exist"
+  "&i/o-file-is-read-only")
+
 > (find-proc "^file" 'exact 3)
+Returning 3 of 12 results
 ("file-access-time" "file-buffer-size" "file-change-time")
 
 > (find-proc "let" 'exact 5)
-("delete-directory" "delete-file" "eq-hashtable-delete!" "fluid-let" "fluid-let-syntax")
+Returning 5 of 20 results
+("delete-directory"
+  "delete-file"
+  "eq-hashtable-delete!"
+  "fluid-let"
+  "fluid-let-syntax")
+
 > (find-proc "^let")
-("let*" "let*-values" "let-syntax" "let-values" "letrec" "letrec*" "letrec-syntax")
+("let" "let*" "let*-values" "let-syntax" "let-values"
+  "letrec" "letrec*" "letrec-syntax")
 ```
 
 Under fuzzy matching, the `^` is included as part of the Levenshtein distance calculation and, thus, should not be included in search strings when using fuzzy matching.
