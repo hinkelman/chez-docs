@@ -8,7 +8,7 @@ Related blog posts:
 
 ## Approach
 
-`chez-docs` scrapes the web pages for the [Chez Scheme User's Guide (CSUG)](https://cisco.github.io/ChezScheme/csug9.5/) and [The Scheme Programming Language (TSPL)](https://www.scheme.com/tspl4/) and displays the extracted documentation in the REPL. `chez-docs` optionally uses a call to `system` to open documentation in your default browser. Displaying the documentation in the REPL is more convenient than opening pages in the browser, but the web pages contain formatting that make it easier to digest the documentation. The code used to scrape the Chez Scheme User's Guide for use in `chez-docs` is in a [separate repository](https://github.com/hinkelman/chez-docs-scrape). 
+`chez-docs` scrapes the web pages for the [Chez Scheme User's Guide (CSUG)](https://cisco.github.io/ChezScheme/csug10.0/) and [The Scheme Programming Language (TSPL)](https://www.scheme.com/tspl4/) and displays the extracted documentation in the REPL. `chez-docs` optionally uses a call to `system` to open documentation in your default browser. Displaying the documentation in the REPL is more convenient than opening pages in the browser, but the web pages contain formatting that make it easier to digest the documentation. The code used to scrape the Chez Scheme User's Guide for use in `chez-docs` is in a [separate repository](https://github.com/hinkelman/chez-docs-scrape). 
 
 ## Installation
 
