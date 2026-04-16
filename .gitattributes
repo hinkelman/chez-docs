@@ -1,3 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 *.sc linguist-language=Scheme
+chez-docs-data.scm linguist-generated=true
+summary-data.scm linguist-generated=true
