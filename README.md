@@ -1,6 +1,6 @@
 # Chez Scheme Documentation Library
 
-Access Chez Scheme documentation from the REPL. 
+Access Chez Scheme documentation from the REPL.
 
 Related blog posts:  
 [Access Chez Scheme documentation from the REPL](https://www.travishinkelman.com/post/access-chez-scheme-documentation-from-repl/)  
@@ -8,7 +8,7 @@ Related blog posts:
 
 ## Approach
 
-`chez-docs` scrapes the web pages for the [Chez Scheme User's Guide (CSUG)](https://cisco.github.io/ChezScheme/csug10.0/) and [The Scheme Programming Language (TSPL)](https://www.scheme.com/tspl4/) and displays the extracted documentation in the REPL. `chez-docs` optionally uses a call to `system` to open documentation in your default browser. Displaying the documentation in the REPL is more convenient than opening pages in the browser, but the web pages contain formatting that make it easier to digest the documentation. The code used to scrape the Chez Scheme User's Guide for use in `chez-docs` is in a [separate repository](https://github.com/hinkelman/chez-docs-scrape). 
+`chez-docs` scrapes the web pages for the [Chez Scheme User's Guide (CSUG)](https://cisco.github.io/ChezScheme/csug10.3.0/) and [The Scheme Programming Language (TSPL)](https://www.scheme.com/tspl4/) and displays the extracted documentation in the REPL. `chez-docs` optionally uses a call to `system` to open documentation in your default browser. Displaying the documentation in the REPL is more convenient than opening pages in the browser, but the web pages contain formatting that make it easier to digest the documentation. The code used to scrape the Chez Scheme User's Guide for use in `chez-docs` is in a [separate repository](https://github.com/hinkelman/chez-docs-scrape).
 
 ## Installation
 
@@ -24,7 +24,7 @@ For more information on getting started with [Akku](https://akkuscm.org/), see t
 
 Clone or download this repository. Move `chez-docs.sls`, `summary-data.scm`, and `chez-docs-data.scm` to a directory found by `(library-directories)`. For more information on how Chez Scheme finds libraries, see blog posts for [macOS and Windows](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs/) or [Ubuntu](https://www.travishinkelman.com/post/getting-started-with-chez-scheme-and-emacs-ubuntu/).
 
-## Import 
+## Import
 
 `(import (chez-docs))`
 
@@ -142,4 +142,4 @@ Under fuzzy matching, the `^` is included as part of the Levenshtein distance ca
 ("map" "max" "car" "exp" "memp")
 ```
 
-`chez-docs` also includes a procedure, `launch-csug-summary`, for opening the Chez Scheme User's Guide [Summary of Forms](https://cisco.github.io/ChezScheme/csug10.0/summary.html) page in your default browser. The procedure takes no arguments. 
+`chez-docs` also includes a procedure, `launch-csug-summary`, for opening the Chez Scheme User's Guide [Summary of Forms](https://cisco.github.io/ChezScheme/csug10.3.0/summary.html) page in your default browser. The procedure takes no arguments.
