@@ -93,7 +93,7 @@
 
   (define (launch-csug-summary)
     (launch-link
-     "https://cisco.github.io/ChezScheme/csug10.0/summary.html"
+     "https://cisco.github.io/ChezScheme/csug10.3.0/summary.html"
      "(launch-csug-summary)"
      "CSUG summary"))
 
