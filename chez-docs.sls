@@ -65,9 +65,41 @@
                    (tspl "\nTHE SCHEME PROGRAMMING LANGUAGE\n\n"))])
       (when (not (symbol=? action 'open))
         (display (cadr (assoc source srclu)))
-        (for-each display doc))
+        (for-each (lambda (para) (display (render-para para))) doc))
       (when (not (symbol=? action 'display))
         (launch-doc-link proc source))))
+
+  ;; render documentation -----------------------------------------
+  ;; each doc is a list of paragraphs; each paragraph is a list of nodes
+  ;; a node is either a string or one of:
+  ;;   (code node ...) (var node ...) (bold node ...) (sub node ...)
+  ;;   (sup node ...) (link href node ...) (math string) (br)
+  ;;   (ul node ...) (li node ...) (dt node ...) (dd node ...)
+  ;;   (table (row (cell node ...) ...) ...)
+  ;; see sxml->doc in chez-docs-scrape for how these are produced
+
+  (define (render-para para)
+    (string-append (render-plain-nodes para) "\n\n"))
+
+  (define (render-plain node)
+    (cond
+     [(string? node) node]
+     [(pair? node)
+      (case (car node)
+        [(br) "\n"]
+        [(table) "[table not shown]"]
+        [(link) (render-plain-nodes (cddr node))]
+        [(ul) (string-append "\n" (render-plain-nodes (cdr node)) "\n")]
+        [(li) (string-append "\n* " (render-plain-nodes (cdr node)))]
+        [(dt) (string-append "\n" (render-plain-nodes (cdr node)))]
+        [(dd) (string-append "\n    " (render-plain-nodes (cdr node)))]
+        [(sup) (string-append "^" (render-plain-nodes (cdr node)))]
+        ;; code, var, bold, sub, math
+        [else (render-plain-nodes (cdr node))])]
+     [else ""]))
+
+  (define (render-plain-nodes nodes)
+    (apply string-append (map render-plain nodes)))
 
   (define (get-doc proc source)
     (let* ([anchor (get-anchor proc source)]

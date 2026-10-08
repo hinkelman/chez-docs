@@ -177,6 +177,37 @@
 (test-equal (doc-output "<") (doc-output "<" 'display 'both))
 (test-end "doc-display-test")
 
+;; rendering ----------------------------------------------------
+
+(test-begin "doc-render-test")
+;; every entry is (anchor para ...) and every para is a non-empty list of nodes
+(test-assert
+ (for-all (lambda (source)
+            (for-all (lambda (entry)
+                       (and (string? (car entry))
+                            (pair? (cdr entry))
+                            (for-all pair? (cdr entry))))
+                     (cdr (assoc source chez-docs-data))))
+          '(csug tspl)))
+;; code, var, and bold markup render as plain text; paragraphs end in a blank line
+(test-assert
+ (string-prefix?
+  (string-append
+   "\nTHE SCHEME PROGRAMMING LANGUAGE\n\n"
+   "syntax: (quote obj)\nsyntax: 'obj\nreturns: obj\nlibraries: (rnrs base), (rnrs)\n\n"
+   "'obj is equivalent to (quote obj). The abbreviated form is converted into "
+   "the longer form by the Scheme reader (see read).\n\n")
+  (doc-output "quote" 'display 'tspl)))
+;; math nodes render their text
+(test-assert (string-contains? (doc-output "quote" 'display 'tspl) "(+ 2 3) => 5\n"))
+;; list items render with a bullet
+(test-assert (string-contains? (doc-output "continuation-marks->iterator" 'display 'csug)
+                               "\n* The first result is"))
+;; tables are not rendered
+(test-assert (string-contains? (doc-output "define-record" 'display 'csug)
+                               "[table not shown]"))
+(test-end "doc-render-test")
+
 ;; errors -------------------------------------------------------
 
 (test-begin "error-test")
