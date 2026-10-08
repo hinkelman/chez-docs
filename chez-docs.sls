@@ -38,14 +38,21 @@
       (assertion-violation "(doc proc action)"
                            "action not one of 'display, 'open, 'both"))
     (cond [(or (symbol=? source 'csug) (symbol=? source 'tspl))
-           (let ([doc (get-doc proc source)])
-             (if doc
-                 (action-helper proc doc action source)
-                 (assertion-violation "(doc proc action source)"
-                                      (string-append
-                                       proc " not found in "
-                                       (symbol->string source) "\n"
-                                       (guess-proc proc)))))]
+           (let ([doc (get-doc proc source)]
+                 [other (if (symbol=? source 'csug) 'tspl 'csug)])
+             (cond [doc (action-helper proc doc action source)]
+                   ;; documented, but only in the other book
+                   [(get-doc proc other)
+                    (assertion-violation "(doc proc action source)"
+                                         (string-append
+                                          proc " not found in " (symbol->string source)
+                                          " but is found in " (symbol->string other)))]
+                   [else
+                    (assertion-violation "(doc proc action source)"
+                                         (string-append
+                                          proc " not found in "
+                                          (symbol->string source) "\n"
+                                          (guess-proc proc)))]))]
           [(symbol=? source 'both)
            (let ([doc-csug (get-doc proc 'csug)]
                  [doc-tspl (get-doc proc 'tspl)])

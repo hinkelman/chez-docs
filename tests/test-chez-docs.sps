@@ -261,6 +261,11 @@
                                "Did you mean '"))
 (test-assert (string-contains? (error-message (lambda () (doc "carr" 'display 'csug)))
                                "not found in csug"))
+;; names documented only in the other book say where they are found
+(test-equal "fxsll not found in tspl but is found in csug"
+  (error-message (lambda () (doc "fxsll" 'display 'tspl))))
+(test-equal "named let not found in csug but is found in tspl"
+  (error-message (lambda () (doc "named let" 'display 'csug))))
 (test-end "error-test")
 
 (exit (if (zero? (test-runner-fail-count (test-runner-get))) 0 1))
