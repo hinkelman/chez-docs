@@ -72,7 +72,7 @@
     (let ([srclu '((csug "CHEZ SCHEME USER'S GUIDE")
                    (tspl "THE SCHEME PROGRAMMING LANGUAGE"))])
       (when (not (symbol=? action 'open))
-        (let ([render (current-renderer)])
+        (let ([render (current-renderer source)])
           (display (string-append "\n" (render (list (list 'bold (cadr (assoc source srclu)))))
                                   "\n\n"))
           (for-each (lambda (para) (display (string-append (render para) "\n\n"))) doc)))
@@ -100,10 +100,35 @@
          (assertion-violation "(doc-style style)" "style not one of 'plain, 'rich" x))
        x)))
 
-  (define (current-renderer)
+  (define (current-renderer source)
     (if (symbol=? (doc-style) 'rich)
-        (make-renderer #t (not (no-color?)))
-        (make-renderer #f #f)))
+        (make-renderer #t (not (no-color?)) (base-url source))
+        (make-renderer #f #f (base-url source))))
+
+  ;; e.g., "https://cisco.github.io/ChezScheme/csug10.3.0/", taken from the
+  ;; summary data so it follows the scraped version of the docs
+  (define (base-url source)
+    (let* ([url (caddr (cadr (assoc source summary-data)))]
+           [page (car (split-string url #\#))])
+      (let loop ([i (- (string-length page) 1)])
+        (if (char=? (string-ref page i) #\/)
+            (substring page 0 (+ i 1))
+            (loop (- i 1))))))
+
+  ;; links in the docs are relative to the page, e.g., "./system.html#g96",
+  ;; except for a few absolute links to other sites; urls may contain "/./",
+  ;; e.g., "http://scheme.com/tspl4/./objects.html", which is dropped
+  (define (resolve-href href base)
+    (drop-dot-segments
+     (if (string-prefix? "http" href) href (string-append base href))))
+
+  (define (drop-dot-segments url)
+    (let loop ([i 0] [out '()])
+      (cond [(>= i (string-length url)) (apply string-append (reverse out))]
+            [(and (<= (+ i 3) (string-length url))
+                  (string=? (substring url i (+ i 3)) "/./"))
+             (loop (+ i 2) out)]
+            [else (loop (+ i 1) (cons (string (string-ref url i)) out))])))
 
   (define (no-color?)
     (let ([nc (getenv "NO_COLOR")])
@@ -116,8 +141,10 @@
       (code . "36")))   ; cyan
 
   ;; returns a procedure that renders a list of nodes to a string
-  ;; rich?: use Unicode symbols; color?: emit ANSI escape codes
-  (define (make-renderer rich? color?)
+  ;; rich?: use Unicode symbols
+  ;; color?: emit ANSI escape codes (styles and OSC 8 hyperlinks)
+  ;; base: URL that relative links are resolved against
+  (define (make-renderer rich? color? base)
     ;; state is the list of active SGR codes (innermost first); every style
     ;; change re-emits the full state so nested styles survive a closing tag
     (define (sgr state)
@@ -137,8 +164,12 @@
         (let ([kids (cdr node)])
           (case (car node)
             [(br) "\n"]
-            [(table) "[table not shown]"]
-            [(link) (render-nodes (cdr kids) state)]
+            [(table) (render-table kids state "")]
+            [(link)
+             (let ([text (render-nodes (cdr kids) state)])
+               (if color?
+                   (hyperlink (resolve-href (car kids) base) text)
+                   text))]
             [(ul) (string-append "\n" (render-nodes kids state) "\n")]
             [(li) (string-append (if rich? "\n\x2022; " "\n* ") (render-nodes kids state))]
             [(dt) (string-append "\n" (render-nodes kids state))]
@@ -159,8 +190,110 @@
             [else (render-nodes kids state)]))]
        [else ""]))
     (define (render-nodes nodes state)
-      (apply string-append (map (lambda (n) (render-node n state)) nodes)))
+      (cond
+       [(null? nodes) ""]
+       ;; spaces before a table indent the whole table, not just its first row
+       [(and (blank-string? (car nodes)) (pair? (cdr nodes))
+             (table-node? (cadr nodes)))
+        (string-append (render-table (cdadr nodes) state (car nodes))
+                       (render-nodes (cddr nodes) state))]
+       [else (string-append (render-node (car nodes) state)
+                            (render-nodes (cdr nodes) state))]))
+    ;; columns are aligned on the visible width of each cell; cells are
+    ;; trimmed because the HTML pads them with spaces for alignment
+    (define (render-table rows state indent)
+      (let* ([cells (map (lambda (row)
+                           (map (lambda (cell)
+                                  (render-nodes (trim-nodes (cdr cell)) state))
+                                (cdr row)))
+                         rows)]
+             [cells (filter (lambda (row)
+                              (exists (lambda (c) (not (string=? c ""))) row))
+                            cells)]
+             [ncol (apply max 0 (map length cells))]
+             [widths (map (lambda (j)
+                            (apply max 0 (map (lambda (row)
+                                                (if (< j (length row))
+                                                    (visible-length (list-ref row j))
+                                                    0))
+                                              cells)))
+                          (iota ncol))])
+        (join (map (lambda (row)
+                     (string-append
+                      indent
+                      (right-trim
+                       (join (map (lambda (c w)
+                                    (string-append
+                                     c (make-string (- w (visible-length c)) #\space)))
+                                  row (list-head widths (length row)))
+                             "  "))))
+                   cells)
+              "\n")))
     (lambda (nodes) (render-nodes nodes '())))
+
+  ;; OSC 8 terminal hyperlink; terminals without support show only the text
+  (define (hyperlink url text)
+    (string-append "\x1b;]8;;" url "\x1b;\\" text "\x1b;]8;;\x1b;\\"))
+
+  ;; length of s as displayed, i.e., without ANSI escape sequences
+  (define (visible-length s)
+    (let ([n (string-length s)])
+      (let loop ([i 0] [len 0])
+        (cond
+         [(= i n) len]
+         [(and (char=? (string-ref s i) #\esc) (< (+ i 1) n))
+          (if (char=? (string-ref s (+ i 1)) #\[)
+              ;; SGR: ESC [ ... m
+              (let skip ([j (+ i 2)])
+                (if (or (= j n) (char=? (string-ref s j) #\m))
+                    (loop (+ j 1) len)
+                    (skip (+ j 1))))
+              ;; OSC: ESC ] ... ESC \
+              (let skip ([j (+ i 2)])
+                (cond [(>= (+ j 1) n) (loop n len)]
+                      [(and (char=? (string-ref s j) #\esc)
+                            (char=? (string-ref s (+ j 1)) #\\))
+                       (loop (+ j 2) len)]
+                      [else (skip (+ j 1))])))]
+         [else (loop (+ i 1) (+ len 1))]))))
+
+  (define (table-node? x) (and (pair? x) (eq? (car x) 'table)))
+
+  (define (blank-string? x)
+    (and (string? x) (for-all char-whitespace? (string->list x))))
+
+  ;; trim leading space from the first node and trailing space from the last
+  (define (trim-nodes nodes)
+    (let* ([nodes (if (and (pair? nodes) (string? (car nodes)))
+                      (cons (left-trim (car nodes)) (cdr nodes))
+                      nodes)]
+           [rev (reverse nodes)]
+           [rev (if (and (pair? rev) (string? (car rev)))
+                    (cons (right-trim (car rev)) (cdr rev))
+                    rev)])
+      (reverse rev)))
+
+  (define (left-trim s)
+    (let loop ([i 0])
+      (if (and (< i (string-length s)) (char-whitespace? (string-ref s i)))
+          (loop (+ i 1))
+          (substring s i (string-length s)))))
+
+  (define (right-trim s)
+    (let loop ([i (string-length s)])
+      (if (and (> i 0) (char-whitespace? (string-ref s (- i 1))))
+          (loop (- i 1))
+          (substring s 0 i))))
+
+  (define (string-prefix? prefix s)
+    (and (<= (string-length prefix) (string-length s))
+         (string=? prefix (substring s 0 (string-length prefix)))))
+
+  (define (split-string s c)
+    (let loop ([chars (string->list s)] [cur '()] [out '()])
+      (cond [(null? chars) (reverse (cons (list->string (reverse cur)) out))]
+            [(char=? (car chars) c) (loop (cdr chars) '() (cons (list->string (reverse cur)) out))]
+            [else (loop (cdr chars) (cons (car chars) cur) out)])))
 
   (define (join strs sep)
     (if (null? strs)

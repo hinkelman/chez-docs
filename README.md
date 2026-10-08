@@ -146,7 +146,7 @@ Under fuzzy matching, the `^` is included as part of the Levenshtein distance ca
 
 ## Rich Output
 
-By default, `doc` displays plain ASCII text. Setting the `doc-style` parameter to `'rich` displays documentation with formatting from the web pages: bold labels, italic metavariables, colored code, and Unicode symbols (e.g., `⇒` for `=>`, `obj₁` for `obj1`, and `•` for list bullets). Rich output uses ANSI escape codes and requires a terminal that supports them. If the [`NO_COLOR`](https://no-color.org) environment variable is set, the escape codes are omitted but the Unicode symbols are kept.
+By default, `doc` displays plain ASCII text. Setting the `doc-style` parameter to `'rich` displays documentation with formatting from the web pages: bold labels, italic metavariables, colored code, Unicode symbols (e.g., `⇒` for `=>`, `obj₁` for `obj1`, and `•` for list bullets). Cross-references (e.g., section numbers) become [OSC 8 hyperlinks](https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda) to the online documentation, which are clickable in terminals that support them; other terminals show only the link text. Rich output uses ANSI escape codes and requires a terminal that supports them. If the [`NO_COLOR`](https://no-color.org) environment variable is set, the escape codes (including hyperlinks) are omitted but the Unicode symbols are kept.
 
 ```
 > (doc-style 'rich)

@@ -204,9 +204,17 @@
 ;; list items render with a bullet
 (test-assert (string-contains? (doc-output "continuation-marks->iterator" 'display 'csug)
                                "\n* The first result is"))
-;; tables are not rendered
-(test-assert (string-contains? (doc-output "define-record" 'display 'csug)
-                               "[table not shown]"))
+;; tables are laid out in aligned columns with trimmed cells
+(test-assert (string-contains? (doc-output "eval-when" 'display 'csug)
+                               (string-append
+                                "\n\n   load  compile  visit  revisit  eval\n"
+                                "L  L     C        V      R        ---\n"
+                                "C  ---   ---      ---    ---      C\n")))
+;; the plain style keeps ASCII symbols in tables
+(test-assert (string-contains? (doc-output "ee-bind-key" 'display 'csug)
+                               "\n      <key-string>  -->  \"<key-char>^+\"\n"))
+(test-assert (not (string-contains? (doc-output "define-record" 'display 'csug)
+                                    "[table not shown]")))
 (test-end "doc-render-test")
 
 (test-begin "doc-style-test")
@@ -241,8 +249,28 @@
 ;; checked without color because size is an italic metavariable
 (test-assert (string-contains? (rich-output "bytevector-sint-set!" 'display 'tspl)
                                "2^(size\xB7;8-1)"))
+;; an indented table is indented on every row
+(test-assert (string-contains? (rich-output "ee-bind-key" 'display 'csug)
+                               (string-append
+                                "\n      <key-char>  \x27F6;  \\\\e (specifying an escape character)\n"
+                                "                  |  ^x (specifying control-x)\n")))
+;; links are plain text without color
+(test-assert (string-contains? (rich-output "define-top-level-syntax" 'display 'csug)
+                               "(Section 12.3"))
 (putenv "NO_COLOR" "")
 (test-assert (string-contains? (rich-output "quote" 'display 'tspl) esc))
+;; links become OSC 8 hyperlinks resolved against the book's base url
+(let ([osc8 (lambda (url text)
+              (string-append esc "]8;;" url esc "\\" text esc "]8;;" esc "\\"))])
+  (test-assert (string-contains? (rich-output "define-top-level-syntax" 'display 'csug)
+                                 (osc8 "https://cisco.github.io/ChezScheme/csug10.3.0/system.html#g119"
+                                       "12.3")))
+  ;; "http://scheme.com/tspl4/./syntax.html" in the data loses its "/./"
+  (test-assert (string-contains? (rich-output "define-structure" 'display 'csug)
+                                 (osc8 "http://scheme.com/tspl4/syntax.html#g137" "8.4"))))
+;; the plain style has no hyperlinks
+(test-assert (string-contains? (doc-output "define-top-level-syntax" 'display 'csug)
+                               "(Section 12.3"))
 (test-end "doc-style-test")
 
 ;; errors -------------------------------------------------------
