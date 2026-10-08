@@ -143,3 +143,18 @@ Under fuzzy matching, the `^` is included as part of the Levenshtein distance ca
 ```
 
 `chez-docs` also includes a procedure, `launch-csug-summary`, for opening the Chez Scheme User's Guide [Summary of Forms](https://cisco.github.io/ChezScheme/csug10.3.0/summary.html) page in your default browser. The procedure takes no arguments.
+
+## Rich Output
+
+By default, `doc` displays plain ASCII text. Setting the `doc-style` parameter to `'rich` displays documentation with formatting from the web pages: bold labels, italic metavariables, colored code, and Unicode symbols (e.g., `⇒` for `=>`, `obj₁` for `obj1`, and `•` for list bullets). Rich output uses ANSI escape codes and requires a terminal that supports them. If the [`NO_COLOR`](https://no-color.org) environment variable is set, the escape codes are omitted but the Unicode symbols are kept.
+
+```
+> (doc-style 'rich)
+> (doc "eq?")
+```
+
+To use rich output in every session, add `(doc-style 'rich)` to your `.chezschemerc` file (after `(import (chez-docs))`). Use `parameterize` to change the style for a single call.
+
+```
+> (parameterize ([doc-style 'rich]) (doc "eq?"))
+```

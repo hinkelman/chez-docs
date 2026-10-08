@@ -5,7 +5,8 @@
 #!r6rs
 
 (import (rnrs (6))
-        (only (chezscheme) library-directories with-output-to-string)
+        (only (chezscheme) library-directories with-output-to-string
+              parameterize putenv)
         (srfi :64 testing)
         (chez-docs))
 
@@ -207,6 +208,42 @@
 (test-assert (string-contains? (doc-output "define-record" 'display 'csug)
                                "[table not shown]"))
 (test-end "doc-render-test")
+
+(test-begin "doc-style-test")
+(test-equal 'plain (doc-style))
+(test-error (doc-style 'fancy))
+(test-equal 'plain (doc-style))
+;; doc-style is a parameter, so parameterize leaves the global setting alone
+(define (rich-output . args)
+  (parameterize ([doc-style 'rich]) (apply doc-output args)))
+(define esc (string (integer->char 27)))
+(let ([out (rich-output "quote" 'display 'tspl)])
+  ;; bold labels, cyan code, italic metavariables
+  (test-assert (string-contains? out (string-append esc "[0;1msyntax" esc "[0m")))
+  (test-assert (string-contains? out (string-append esc "[0;36m(quote " esc "[0;36;3mobj")))
+  ;; the italic metavariable returns to the enclosing code style, not to no style
+  (test-assert (string-contains? out (string-append "obj" esc "[0;36m)" esc "[0m")))
+  ;; => becomes a Unicode arrow
+  (test-assert (string-contains? out "(+ 2 3) \x21D2; 5\n")))
+(test-assert (not (string-contains? (doc-output "quote" 'display 'tspl) esc)))
+;; Unicode subscripts and bullets
+(test-assert (string-contains? (rich-output "eq?" 'display 'tspl) "obj\x2081;"))
+(test-assert (string-contains? (rich-output "continuation-marks->iterator" 'display 'csug)
+                               "\n\x2022; The first result is"))
+;; superscripts with a Unicode form map; others fall back to parenthesized ^(...)
+(test-assert (string-contains? (rich-output "foreign-free" 'display 'csug)
+                               "2\x2B7;\x207B;\xB9;"))
+;; NO_COLOR keeps Unicode but drops escape codes
+(putenv "NO_COLOR" "1")
+(let ([out (rich-output "quote" 'display 'tspl)])
+  (test-assert (not (string-contains? out esc)))
+  (test-assert (string-contains? out "(+ 2 3) \x21D2; 5\n")))
+;; checked without color because size is an italic metavariable
+(test-assert (string-contains? (rich-output "bytevector-sint-set!" 'display 'tspl)
+                               "2^(size\xB7;8-1)"))
+(putenv "NO_COLOR" "")
+(test-assert (string-contains? (rich-output "quote" 'display 'tspl) esc))
+(test-end "doc-style-test")
 
 ;; errors -------------------------------------------------------
 

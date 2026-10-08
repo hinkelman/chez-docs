@@ -1,5 +1,6 @@
 (library (chez-docs)
   (export doc
+          doc-style
           find-proc
           launch-csug-summary)
 
@@ -61,11 +62,13 @@
                                 "source not one of 'csug, 'tspl, 'both")]))
 
   (define (action-helper proc doc action source)
-    (let ([srclu '((csug "\nCHEZ SCHEME USER'S GUIDE\n\n")
-                   (tspl "\nTHE SCHEME PROGRAMMING LANGUAGE\n\n"))])
+    (let ([srclu '((csug "CHEZ SCHEME USER'S GUIDE")
+                   (tspl "THE SCHEME PROGRAMMING LANGUAGE"))])
       (when (not (symbol=? action 'open))
-        (display (cadr (assoc source srclu)))
-        (for-each (lambda (para) (display (render-para para))) doc))
+        (let ([render (current-renderer)])
+          (display (string-append "\n" (render (list (list 'bold (cadr (assoc source srclu)))))
+                                  "\n\n"))
+          (for-each (lambda (para) (display (string-append (render para) "\n\n"))) doc)))
       (when (not (symbol=? action 'display))
         (launch-doc-link proc source))))
 
@@ -78,28 +81,118 @@
   ;;   (table (row (cell node ...) ...) ...)
   ;; see sxml->doc in chez-docs-scrape for how these are produced
 
-  (define (render-para para)
-    (string-append (render-plain-nodes para) "\n\n"))
+  ;; 'plain renders ASCII text only
+  ;; 'rich adds Unicode symbols (=> as ⇒, subscripts, bullets) and ANSI styling
+  ;; (bold labels, italic metavariables, colored code); ANSI styling is
+  ;; omitted when the NO_COLOR environment variable is set (https://no-color.org)
+  (define doc-style
+    (make-parameter
+     'plain
+     (lambda (x)
+       (unless (memq x '(plain rich))
+         (assertion-violation "(doc-style style)" "style not one of 'plain, 'rich" x))
+       x)))
 
-  (define (render-plain node)
-    (cond
-     [(string? node) node]
-     [(pair? node)
-      (case (car node)
-        [(br) "\n"]
-        [(table) "[table not shown]"]
-        [(link) (render-plain-nodes (cddr node))]
-        [(ul) (string-append "\n" (render-plain-nodes (cdr node)) "\n")]
-        [(li) (string-append "\n* " (render-plain-nodes (cdr node)))]
-        [(dt) (string-append "\n" (render-plain-nodes (cdr node)))]
-        [(dd) (string-append "\n    " (render-plain-nodes (cdr node)))]
-        [(sup) (string-append "^" (render-plain-nodes (cdr node)))]
-        ;; code, var, bold, sub, math
-        [else (render-plain-nodes (cdr node))])]
-     [else ""]))
+  (define (current-renderer)
+    (if (symbol=? (doc-style) 'rich)
+        (make-renderer #t (not (no-color?)))
+        (make-renderer #f #f)))
 
-  (define (render-plain-nodes nodes)
-    (apply string-append (map render-plain nodes)))
+  (define (no-color?)
+    (let ([nc (getenv "NO_COLOR")])
+      (and nc (not (string=? nc "")))))
+
+  ;; SGR codes for styled nodes
+  (define sgr-codes
+    '((bold . "1")
+      (var  . "3")      ; italic
+      (code . "36")))   ; cyan
+
+  ;; returns a procedure that renders a list of nodes to a string
+  ;; rich?: use Unicode symbols; color?: emit ANSI escape codes
+  (define (make-renderer rich? color?)
+    ;; state is the list of active SGR codes (innermost first); every style
+    ;; change re-emits the full state so nested styles survive a closing tag
+    (define (sgr state)
+      (cond [(not color?) ""]
+            [(null? state) "\x1b;[0m"]
+            [else (string-append "\x1b;[0;" (join (reverse state) ";") "m")]))
+    (define (styled tag kids state)
+      (let ([code (cdr (assq tag sgr-codes))])
+        (if color?
+            (let ([new (cons code state)])
+              (string-append (sgr new) (render-nodes kids new) (sgr state)))
+            (render-nodes kids state))))
+    (define (render-node node state)
+      (cond
+       [(string? node) node]
+       [(pair? node)
+        (let ([kids (cdr node)])
+          (case (car node)
+            [(br) "\n"]
+            [(table) "[table not shown]"]
+            [(link) (render-nodes (cdr kids) state)]
+            [(ul) (string-append "\n" (render-nodes kids state) "\n")]
+            [(li) (string-append (if rich? "\n\x2022; " "\n* ") (render-nodes kids state))]
+            [(dt) (string-append "\n" (render-nodes kids state))]
+            [(dd) (string-append "\n    " (render-nodes kids state))]
+            [(sup) (or (and rich? (script-text kids superscripts))
+                       (let ([s (render-nodes kids state)])
+                         ;; parenthesize so 2^(size·8-1) - 1 isn't ambiguous
+                         (if (and rich? (> (string-length (node-text kids)) 1))
+                             (string-append "^(" s ")")
+                             (string-append "^" s))))]
+            [(sub) (or (and rich? (script-text kids subscripts))
+                       (render-nodes kids state))]
+            [(math) (let ([s (car kids)])
+                      (if rich?
+                          (let ([hit (assoc s math-symbols)]) (if hit (cdr hit) s))
+                          s))]
+            [(code var bold) (styled (car node) kids state)]
+            [else (render-nodes kids state)]))]
+       [else ""]))
+    (define (render-nodes nodes state)
+      (apply string-append (map (lambda (n) (render-node n state)) nodes)))
+    (lambda (nodes) (render-nodes nodes '())))
+
+  (define (join strs sep)
+    (if (null? strs)
+        ""
+        (fold-left (lambda (acc s) (string-append acc sep s)) (car strs) (cdr strs))))
+
+  ;; maps all text in nodes through table, or #f if any char has no mapping
+  ;; (e.g., the "·" in 2^(size·8)), in which case the caller falls back to plain
+  (define (script-text nodes table)
+    (let ([chars (string->list (node-text nodes))])
+      (and (pair? chars)
+           (for-all (lambda (c) (assv c table)) chars)
+           (list->string (map (lambda (c) (cdr (assv c table))) chars)))))
+
+  (define (node-text nodes)
+    (apply string-append
+           (map (lambda (n)
+                  (cond [(string? n) n]
+                        [(pair? n) (node-text (cdr n))]
+                        [else ""]))
+                nodes)))
+
+  (define (char-table from to)
+    (map cons (string->list from) (string->list to)))
+
+  (define subscripts
+    (char-table "0123456789+-=()aehijklmnoprstuvx"
+                "\x2080;\x2081;\x2082;\x2083;\x2084;\x2085;\x2086;\x2087;\x2088;\x2089;\x208A;\x208B;\x208C;\x208D;\x208E;\x2090;\x2091;\x2095;\x1D62;\x2C7C;\x2096;\x2097;\x2098;\x2099;\x2092;\x209A;\x1D63;\x209B;\x209C;\x1D64;\x1D65;\x2093;"))
+
+  (define superscripts
+    (char-table "0123456789+-=()abcdefghijklmnoprstuvwxyz"
+                "\x2070;\xB9;\xB2;\xB3;\x2074;\x2075;\x2076;\x2077;\x2078;\x2079;\x207A;\x207B;\x207C;\x207D;\x207E;\x1D43;\x1D47;\x1D9C;\x1D48;\x1D49;\x1DA0;\x1D4D;\x2B0;\x2071;\x2B2;\x1D4F;\x2E1;\x1D50;\x207F;\x1D52;\x1D56;\x2B3;\x2E2;\x1D57;\x1D58;\x1D5B;\x2B7;\x2E3;\x2B8;\x1DBB;"))
+
+  (define math-symbols
+    '(("=>"  . "\x21D2;")    ; ⇒
+      ("->"  . "\x2192;")    ; →
+      ("-->" . "\x27F6;")    ; ⟶
+      ("<="  . "\x2264;")    ; ≤
+      (">="  . "\x2265;")))  ; ≥
 
   (define (get-doc proc source)
     (let* ([anchor (get-anchor proc source)]
